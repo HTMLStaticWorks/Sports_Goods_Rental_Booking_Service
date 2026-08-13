@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawsome | Member Sign Up</title>
+    <title>Customer Sign Up | SportGo Gear Rental & Booking Service</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -16,20 +19,27 @@
         }
     </style>
 </head>
+
 <body class="auth-wrapper">
     <!-- Theme & RTL Toggles moved outside the main container -->
     <div class="auth-floating-toggles">
-        <button id="theme-toggle" class="btn-nav-utility" style="background: var(--card-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.1);" title="Change Theme"><i data-lucide="moon"></i></button>
-        <button id="rtl-toggle" class="btn-nav-utility" style="background: var(--card-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.1);" title="Switch Direction"><span>RTL</span></button>
+        <button id="theme-toggle" class="btn-nav-utility"
+            style="background: var(--card-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.1);" title="Change Theme">
+            <i data-lucide="moon"></i>
+        </button>
+        <button id="rtl-toggle" class="btn-nav-utility"
+            style="background: var(--card-bg); box-shadow: 0 4px 12px rgba(0,0,0,0.1);" title="Switch Direction">
+            <span>RTL</span>
+        </button>
     </div>
 
-    <div class="auth-card" style="max-width: 550px;">
+    <div class="auth-card" style="max-width: 550px; border: 1px solid var(--border);">
 
         <a href="index.html" class="logo-brand" style="justify-content: center; margin-bottom: 2rem;">
-            <i data-lucide="dog"></i> Pawsome
+            <i data-lucide="trophy"></i> SportGo
         </a>
-        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Join the Pack</h2>
-        <p style="opacity: 0.6; margin-bottom: 2.5rem;">Start your dog's journey to behavioral mastery.</p>
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;" class="cyan-gradient-text">Create Your Renter Account</h2>
+        <p style="opacity: 0.6; margin-bottom: 2.5rem; font-family: 'Inter', sans-serif;">Book sports equipment by date and manage deposit status online.</p>
 
         <form action="dashboard.html">
             <input type="text" placeholder="First Name" class="auth-input" required>
@@ -37,36 +47,52 @@
             <input type="email" placeholder="Email Address" class="auth-input" required>
             <div style="position: relative; width: 100%;">
                 <input type="password" placeholder="Password" class="auth-input" style="width: 100%;" required>
-                <span class="password-toggle" style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: var(--slate);"><i data-lucide="eye"></i></span>
+                <span class="password-toggle"
+                    style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: var(--accent);"><i
+                        data-lucide="eye"></i></span>
             </div>
             <div style="position: relative; width: 100%;">
                 <input type="password" placeholder="Confirm Password" class="auth-input" style="width: 100%;" required>
-                <span class="password-toggle" style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: var(--slate);"><i data-lucide="eye"></i></span>
+                <span class="password-toggle"
+                    style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: var(--accent);"><i
+                        data-lucide="eye"></i></span>
             </div>
 
             <div style="margin-bottom: 2rem; text-align: left; font-size: 0.85rem;">
-                <label style="display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer; opacity: 0.7;">
-                    <input type="checkbox" style="margin-top: 0.25rem;" required> <span>I agree to the <a href="#" style="color: var(--primary); font-weight: 700;">Terms & Conditions</a></span>
+                <label style="display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer; opacity: 0.7; font-family: 'Inter', sans-serif;">
+                    <input type="checkbox" style="margin-top: 0.25rem;" required> <span>I agree to the <a href="#"
+                            style="color: var(--accent); font-weight: 700;">Rental Terms & Security Deposit Policy</a></span>
                 </label>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 12px;">Create My Account</button>
+            <button type="submit" class="btn btn-primary"
+                style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 12px;">Create My Account</button>
         </form>
 
         <div style="text-align: center; margin: 2rem 0; position: relative;">
-            <span style="background: var(--card-bg); padding: 0 1rem; position: relative; z-index: 1; font-size: 0.85rem; opacity: 0.6;">Or sign up with</span>
+            <span
+                style="background: var(--card-bg); padding: 0 1rem; position: relative; z-index: 1; font-size: 0.85rem; opacity: 0.6; font-family: 'Inter', sans-serif;">Or
+                sign up with</span>
         </div>
 
         <div class="social-auth">
-            <button class="btn btn-secondary" style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i data-lucide="chrome" style="width: 20px;"></i> Google</button>
-            <button class="btn btn-secondary" style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i data-lucide="apple" style="width: 20px;"></i> Apple</button>
+            <button class="btn btn-secondary"
+                style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i
+                    data-lucide="chrome" style="width: 20px; color: var(--accent);"></i> Google</button>
+            <button class="btn btn-secondary"
+                style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i
+                    data-lucide="apple" style="width: 20px; color: var(--accent);"></i> Apple</button>
         </div>
 
-        <p style="margin-top: 3rem; font-size: 0.95rem; opacity: 0.7;">
-            Already a member? <a href="login.html" style="color: var(--primary); font-weight: 700; white-space: nowrap;">Sign in here</a>
+        <p style="margin-top: 3rem; font-size: 0.95rem; opacity: 0.7; font-family: 'Inter', sans-serif;">
+            Already a member? <a href="login.html"
+                style="color: var(--accent); font-weight: 700; white-space: nowrap;">Sign in here</a>
         </p>
     </div>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 </body>
+
 </html>

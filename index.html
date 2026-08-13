@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawsome | Professional In-Home Dog Training</title>
-    <meta name="description" content="Expert dog training in your home. Catchy brand, modern results.">
+    <title>SportGo | Sports Gear Rental & Booking Service</title>
+    <meta name="description" content="Book pro sports gear for cricket, badminton, and outdoor gear. Select equipment by date, track active rentals, and manage refundable deposits easily.">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -16,7 +18,7 @@
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <a href="index.html" class="logo-brand">
-                <i data-lucide="dog"></i> Pawsome
+                <i data-lucide="trophy"></i> SportGo
             </a>
             <nav class="nav-links">
                 <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
@@ -40,7 +42,7 @@
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
-                    style="margin-top: 1rem; color: white; text-align: center;">Login</a>
+                    style="margin-top: 1rem; color: var(--primary-brand); text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
@@ -59,21 +61,26 @@
     </header>
 
     <main>
-        <!-- Section 1: Hero (Classic) -->
-        <section class="hero-section"
-            style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/hero-classic.png') no-repeat center center/cover;">
-            <div class="container" style="color: white; text-align: center;">
-                <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
-                    <h1 style="margin-bottom: 2rem;">Transforming Behavior In Your Own Home</h1>
-                    <p style="font-size: 1.25rem; margin-bottom: 3rem; opacity: 0.9;">Professional dog training that
-                        fits your life. We solve problems where they happen, using science-backed positive
-                        reinforcement.</p>
-                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
-                        <a href="pricing.html" class="btn btn-primary"
-                            style="padding: 1rem 3rem; font-size: 1.1rem; min-width: 200px;">Get Started</a>
-                        <a href="services.html" class="btn btn-secondary"
-                            style="padding: 1rem 3rem; font-size: 1.1rem; backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); min-width: 200px;">Our
-                            Programs</a>
+        <!-- Section 1: Hero (Classic Redesign) -->
+        <section class="home1-hero">
+            <div class="container">
+                <div class="home1-grid">
+                    <div>
+                        <span class="hero-eyebrow">SPORTS EQUIPMENT RENTAL</span>
+                        <h1 class="home1-heading cyan-gradient-text">Gear Up.<br>Play Better.</h1>
+                        <p class="hero-text">Rent tournament-grade Cricket, Badminton, and Outdoor Gear for custom date slots. Monitor active rentals and track refundable security deposit status in real-time.</p>
+                        <div class="hero-ctas">
+                            <a href="programs.html" class="btn btn-primary hero-btn">Browse Equipment <i data-lucide="chevron-right"></i></a>
+                            <a href="pricing.html" class="btn btn-secondary hero-btn hero-btn-white">Book a Rental</a>
+                        </div>
+                    </div>
+                    <div class="home1-visual-container" id="home1-parallax-container">
+                        <div class="home1-glow"></div>
+                        <img src="assets/images/hero-classic.png" alt="SportGo Sports Gear Selection" class="home1-main-img" id="home1-hero-img">
+                        <!-- Floating decorative sports elements -->
+                        <div class="floating-element float-1" style="filter: drop-shadow(0 10px 10px rgba(0,0,0,0.15));"><i data-lucide="trophy" style="width:48px; height:48px; color:var(--accent);"></i></div>
+                        <div class="floating-element float-2" style="filter: drop-shadow(0 10px 10px rgba(0,0,0,0.15));"><i data-lucide="dumbbell" style="width:40px; height:40px; color:var(--highlight);"></i></div>
+                        <div class="floating-element float-3" style="filter: drop-shadow(0 10px 10px rgba(0,0,0,0.15));"><i data-lucide="star" style="width:36px; height:36px; color:var(--accent);"></i></div>
                     </div>
                 </div>
             </div>
@@ -83,38 +90,36 @@
         <section>
             <div class="container">
                 <div class="reveal-up" style="text-align: center; margin-bottom: 5rem;">
-                    <h2 style="margin-bottom: 1.5rem;">Why Pawsome Experts?</h2>
-                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8;">We set the gold standard for in-home canine behavioral science.</p>
+                    <h2 style="margin-bottom: 1.5rem;">Why Rent Sports Gear With Us?</h2>
+                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8; font-family: 'Inter', sans-serif;">We deliver professional equipment, flexible date bookings, and transparent security deposit tracking.</p>
                 </div>
                 <div class="grid-3 stagger-container">
                     <div class="card reveal-left">
                         <div class="card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/28536059/pexels-photo-28536059.jpeg"
-                                alt="In-Home Comfort">
+                            <img src="assets/images/service-behavior.png"
+                                alt="Cricket Equipment Rental">
                         </div>
-                        <h3>In-Home Comfort</h3>
-                        <p>No stressful travel. We train your dog in the environment they feel most comfortable and
-                            secure.</p>
-                        <a href="about.html" class="card-cta">Learn More <i data-lucide="arrow-right"></i></a>
+                        <h3>Cricket Equipment Rental</h3>
+                        <p>English Willow bats, protective kits, stumps, and balling machines ready for match day bookings.</p>
+                        <a href="services.html" class="card-cta">Browse Cricket Gear <i data-lucide="arrow-right"></i></a>
                     </div>
                     <div class="card reveal">
                         <div class="card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/19017771/pexels-photo-19017771.jpeg"
-                                alt="Positive Only">
+                            <img src="assets/images/service-obedience.png"
+                                alt="Badminton Gear Booking">
                         </div>
-                        <h3>Positive Only</h3>
-                        <p>We use force-free, rewards-based methods that build trust and lasting behavioral change.</p>
-                        <a href="about.html" class="card-cta">Our Philosophy <i data-lucide="arrow-right"></i></a>
+                        <h3>Badminton Gear & Strings</h3>
+                        <p>High-tension carbon graphite rackets, feather shuttlecock bundles, and portable court net systems.</p>
+                        <a href="services.html" class="card-cta">Browse Badminton <i data-lucide="arrow-right"></i></a>
                     </div>
                     <div class="card reveal-right">
                         <div class="card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/5904050/pexels-photo-5904050.jpeg"
-                                alt="Digital Tracking">
+                            <img src="assets/images/service-puppy.png"
+                                alt="Outdoor Gear & Camping">
                         </div>
-                        <h3>Digital Tracking</h3>
-                        <p>Track your dog's progress, view homework, and watch training videos on our exclusive portal.
-                        </p>
-                        <a href="dashboard.html" class="card-cta">Explore App <i data-lucide="arrow-right"></i></a>
+                        <h3>Outdoor & Camping Gear</h3>
+                        <p>All-weather camping tents, trekking poles, mountain bikes, hydration packs, and portable generators.</p>
+                        <a href="dashboard.html" class="card-cta">Book Date Slot <i data-lucide="arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -124,41 +129,38 @@
         <section style="background: var(--card-bg);">
             <div class="container">
                 <div class="grid-resp-2">
-                    <div class="reveal-zoom" style="display: flex; justify-content: center;">
-                        <img src="assets/images/how-it-works.png" alt="Training Process"
-                            style="border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); max-width: 75%; height: auto; object-fit: cover;">
+                    <div class="reveal-zoom" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/images/how-it-works.png" alt="Sports Gear Rental Process"
+                            style="border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); max-width: 85%; height: auto; object-fit: cover;">
                     </div>
-                    <div class="reveal-right">
-                        <h2 style="margin-bottom: 2rem;">A Simple Path to a Better Dog</h2>
+                    <div class="reveal-right" style="display: flex; flex-direction: column; justify-content: center;">
+                        <h2 style="margin-bottom: 2rem;">Seamless Booking & Deposit Management</h2>
                         <div style="margin-bottom: 2.5rem;">
                             <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
                                 <div
-                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                                    style="background: var(--accent); color: var(--primary-brand); width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-family: 'Space Grotesk', sans-serif;">
                                     1</div>
                                 <div>
-                                    <h4 style="font-size: 1.2rem;">Initial Assessment</h4>
-                                    <p style="opacity: 0.7;">We visit your home to observe behavior and set realistic,
-                                        achievable goals.</p>
+                                    <h4 style="font-size: 1.2rem;">Browse Gear by Sport</h4>
+                                    <p style="opacity: 0.7;">Select Cricket, Badminton, or Outdoor equipment tailored to your level and match needs.</p>
                                 </div>
                             </div>
                             <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
                                 <div
-                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                                    style="background: var(--accent); color: var(--primary-brand); width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-family: 'Space Grotesk', sans-serif;">
                                     2</div>
                                 <div>
-                                    <h4 style="font-size: 1.2rem;">In-Home Practice</h4>
-                                    <p style="opacity: 0.7;">Weekly sessions focusing on positive communication and
-                                        command reliability.</p>
+                                    <h4 style="font-size: 1.2rem;">Book Slots by Date</h4>
+                                    <p style="opacity: 0.7;">Pick your preferred pickup date, rental duration, and instant store pickup or delivery.</p>
                                 </div>
                             </div>
                             <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
                                 <div
-                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                                    style="background: var(--accent); color: var(--primary-brand); width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-family: 'Space Grotesk', sans-serif;">
                                     3</div>
                                 <div>
-                                    <h4 style="font-size: 1.2rem;">Lasting Success</h4>
-                                    <p style="opacity: 0.7;">Ongoing support via our dashboard to ensure behaviors stick
-                                        for a lifetime.</p>
+                                    <h4 style="font-size: 1.2rem;">Track Rental & Refundable Deposit</h4>
+                                    <p style="opacity: 0.7;">Monitor active equipment rentals and get 100% refundable security deposit returned upon equipment check-in.</p>
                                 </div>
                             </div>
                         </div>
@@ -171,29 +173,24 @@
         <section style="background: var(--card-bg);">
             <div class="container">
                 <div class="grid-resp-2 grid-reverse">
-                    <div class="reveal-left">
+                    <div class="reveal-left" style="display: flex; flex-direction: column; justify-content: center;">
                         <span
-                            style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Meet
-                            Your Expert</span>
-                        <h2 style="margin: 1.5rem 0 2.5rem;">Expertise You Can Trust</h2>
-                        <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8;">Our lead trainer, Alex Paws,
-                            has over 15 years of experience in behavioral science and canine psychology. We focus on the
-                            bond between human and animal, ensuring an enjoyable experience for everyone.</p>
-                        <ul style="margin-bottom: 3rem;">
+                            style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-family: 'Space Grotesk', sans-serif;">Gear Experts & Quality</span>
+                        <h2 style="margin: 1.5rem 0 2.5rem;">Sanitized & Match-Ready Equipment</h2>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8;">Our sports outlet gear technicians inspect, string, sanitize, and test every item before it reaches your hands so you perform at your best.</p>
+                        <ul style="margin-bottom: 3rem; padding-left: 0;">
                             <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;"><i
-                                    data-lucide="check-circle" style="color: var(--primary);"></i> Certified Behavioral
-                                Specialist</li>
+                                     data-lucide="check-circle" style="color: var(--accent);"></i> English Willow Knocked & Seasoned Bats</li>
                             <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;"><i
-                                    data-lucide="check-circle" style="color: var(--primary);"></i> CPDT-KA Accredited
+                                     data-lucide="check-circle" style="color: var(--accent);"></i> Precision String Tensioned Badminton Rackets
                             </li>
                             <li style="display: flex; align-items: center; gap: 1rem;"><i data-lucide="check-circle"
-                                    style="color: var(--primary);"></i> 1000+ Satisfied Pack Members</li>
+                                     style="color: var(--accent);"></i> 5000+ Satisfied Sports Gear Renters</li>
                         </ul>
-                        <a href="about.html" class="btn btn-primary" style="padding: 1rem 3rem;">Learn More About
-                            Alex</a>
+                        <a href="about.html" class="btn btn-primary" style="padding: 1rem 3rem; width: fit-content;">Learn About Our Outlet</a>
                     </div>
-                    <div class="blur-in" style="display: flex; justify-content: center;">
-                        <img src="assets/images/trainer.png" alt="Professional Trainer"
+                    <div class="blur-in" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/images/trainer.png" alt="Sports Equipment Specialist"
                             style="border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 40px 80px -20px rgba(0,0,0,0.2); max-width: 85%; height: auto; object-fit: cover;">
                     </div>
                 </div>
@@ -201,57 +198,54 @@
         </section>
 
         <!-- Section 5: Testimonials -->
-        <section id="testimonials" style="background: var(--secondary); color: white;">
+        <section id="testimonials" style="background: var(--secondary-brand); color: white;">
             <div class="container">
                 <div class="reveal-zoom" style="text-align: center; margin-bottom: 5rem;">
-                    <h2 style="color: white; margin-bottom: 1.5rem;">Heartwarming Success Stories</h2>
-                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8;">Real families, real results.</p>
+                    <h2 style="color: white; margin-bottom: 1.5rem;">What Athletes & Renters Say</h2>
+                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8; font-family: 'Inter', sans-serif;">Real feedback from players and adventure enthusiasts.</p>
                 </div>
                 <div class="grid-3 stagger-container">
                     <div class="reveal-zoom"
-                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center;">
+                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
                         <img src="https://images.pexels.com/photos/1456642/pexels-photo-1456642.jpeg"
-                            alt="The Miller Family"
-                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary); display: block; margin-left: auto; margin-right: auto;">
+                            alt="Rahul Sharma"
+                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--accent); display: block; margin-left: auto; margin-right: auto;">
                         <div
-                            style="display: flex; gap: 0.25rem; color: var(--primary); margin-bottom: 1.5rem; justify-content: center;">
+                            style="display: flex; gap: 0.25rem; color: var(--accent); margin-bottom: 1.5rem; justify-content: center;">
                             <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
                                 data-lucide="star"></i><i data-lucide="star"></i>
                         </div>
-                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"Pawsome changed everything
-                            for our rescue dog, Luna. Walks are finally peaceful and she actually listens to commands
-                            without stress!"</p>
-                        <h4 style="color: var(--primary);">The Miller Family</h4>
+                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"Rented complete cricket match kits for our weekend league. The bat quality was superb and deposit return was processed instantly."</p>
+                        <h4 style="color: var(--accent);">Rahul Sharma</h4>
+                        <p style="font-size:0.8rem; opacity:0.7;">Cricket League Captain</p>
                     </div>
                     <div class="reveal-zoom"
-                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center;">
+                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
                         <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg"
-                            alt="Sarah & Cooper"
-                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary); display: block; margin-left: auto; margin-right: auto;">
+                            alt="Ananya Verma"
+                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--accent); display: block; margin-left: auto; margin-right: auto;">
                         <div
-                            style="display: flex; gap: 0.25rem; color: var(--primary); margin-bottom: 1.5rem; justify-content: center;">
+                            style="display: flex; gap: 0.25rem; color: var(--accent); margin-bottom: 1.5rem; justify-content: center;">
                             <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
                                 data-lucide="star"></i><i data-lucide="star"></i>
                         </div>
-                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"The in-home aspect was key.
-                            Dealing with behavior issues in our actual living room made the solutions click instantly
-                            for us very effective."</p>
-                        <h4 style="color: var(--primary);">Sarah & Cooper</h4>
+                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"Booking badminton rackets and portable nets for our corporate tournament was so convenient. Clean, high-end equipment!"</p>
+                        <h4 style="color: var(--accent);">Ananya Verma</h4>
+                        <p style="font-size:0.8rem; opacity:0.7;">Corporate Event Organizer</p>
                     </div>
                     <div class="reveal-zoom"
-                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center;">
+                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
                         <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg"
-                            alt="Dr. Robert Chen"
-                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary); display: block; margin-left: auto; margin-right: auto;">
+                            alt="David Miller"
+                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--accent); display: block; margin-left: auto; margin-right: auto;">
                         <div
-                            style="display: flex; gap: 0.25rem; color: var(--primary); margin-bottom: 1.5rem; justify-content: center;">
+                            style="display: flex; gap: 0.25rem; color: var(--accent); margin-bottom: 1.5rem; justify-content: center;">
                             <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
                                 data-lucide="star"></i><i data-lucide="star"></i>
                         </div>
-                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"Highly professional and
-                            clearly loves what they do. The Pawsome trainer was patient, calm, and incredibly
-                            effective truly outstanding service effect."</p>
-                        <h4 style="color: var(--primary);">Dr. Robert Chen</h4>
+                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"The outdoor camping tent and trekking gear were pristine. Tracking my security deposit status on the customer dashboard was seamless."</p>
+                        <h4 style="color: var(--accent);">David Miller</h4>
+                        <p style="font-size:0.8rem; opacity:0.7;">Outdoor Explorer</p>
                     </div>
                 </div>
             </div>
@@ -259,17 +253,15 @@
 
         <!-- Section 6: Banner (IMAGE BG) -->
         <section
-            style="padding: 10rem 0; background: linear-gradient(rgba(var(--primary-rgb), 0.9), rgba(var(--primary-rgb), 0.9)), url('assets/images/service-obedience.png') no-repeat center center/cover; position: relative;">
+            style="padding: 10rem 0; background: linear-gradient(rgba(11,19,43,0.85), rgba(11,19,43,0.85)), url('assets/images/service-obedience.png') no-repeat center center/cover; position: relative;">
             <div class="container" style="text-align: center; color: white;">
                 <div class="reveal-zoom">
-                    <h2 style="color: white; margin-bottom: 2rem;">Ready for a
-                        Happier, Calmer Dog?</h2>
+                    <h2 style="color: white; margin-bottom: 2rem;">Ready to Play? Book Your Equipment Now</h2>
                     <p
-                        style="font-size: 1.25rem; margin-bottom: 4rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;">
-                        Book your initial in-home behavioral audit today and join the Pawsome family.</p>
-                    <a href="pricing.html" class="btn btn-secondary"
-                        style="padding: 1rem 3rem; font-size: 1.25rem; background: white; color: var(--primary); width: fit-content; margin: 0 auto;">Reserve
-                        Your Session</a>
+                        style="font-size: 1.25rem; margin-bottom: 4rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto; font-family: 'Inter', sans-serif;">
+                        Reserve your sports gear slot by date, track active rentals, and manage deposit status online in seconds.</p>
+                    <a href="pricing.html" class="btn btn-primary"
+                        style="padding: 1rem 3rem; font-size: 1.25rem; width: fit-content; margin: 0 auto;">Reserve Your Gear Slot</a>
                 </div>
             </div>
         </section>
@@ -281,13 +273,17 @@
             <button class="close-popup"
                 style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; cursor: pointer; color: var(--slate);"><i
                     data-lucide="x"></i></button>
-            <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Book Your Session</h3>
-            <p style="opacity: 0.7; margin-bottom: 2rem;">Enter your details and our lead trainer will contact you for a
-                schedule.</p>
+            <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Book Equipment Slot</h3>
+            <p style="opacity: 0.7; margin-bottom: 2rem;">Select your gear category and rental dates. Our outlet team will confirm your slot.</p>
             <form style="display: flex; flex-direction: column; gap: 1rem;">
                 <input type="text" placeholder="Your Name" class="auth-input" style="margin:0;">
                 <input type="email" placeholder="Email Address" class="auth-input" style="margin:0;">
-                <button class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                <select class="auth-input" style="margin:0;">
+                    <option>Cricket Equipment Kit</option>
+                    <option>Badminton Racket & Net Set</option>
+                    <option>Outdoor & Camping Gear</option>
+                </select>
+                <button class="btn btn-primary" style="width: 100%;">Submit Rental Request</button>
             </form>
         </div>
     </div>
@@ -298,10 +294,9 @@
             <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
-                        <i data-lucide="dog"></i> Pawsome
+                        <i data-lucide="trophy"></i> SportGo
                     </a>
-                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
-                        in-home canine training through empathy and modern behavioral science.</p>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Your trusted sports equipment rental outlet for Cricket, Badminton, and Outdoor gear with date slot booking and refundable deposit tracking.</p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="instagram"></i></a>
                         <a href="#"><i data-lucide="facebook"></i></a>
@@ -311,33 +306,33 @@
                 </div>
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="index.html#testimonials">Success Stories</a></li>
-                        <li><a href="programs.html">Elite Programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="index.html#testimonials">Renter Reviews</a></li>
+                        <li><a href="programs.html">Gear Categories</a></li>
+                        <li><a href="about.html">About Outlet</a></li>
+                        <li><a href="services.html">Rental Services</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                    <h4 style="margin-bottom: 1.5rem;">Legal & Deposits</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="pricing.html">Rental Rates</a></li>
+                        <li><a href="#">Deposit Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
-                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
-                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    <h4 style="margin-bottom: 1.5rem;">Contact Outlet</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><i data-lucide="map-pin"></i> 123 Stadium Road, Arena District</li>
+                        <li><i data-lucide="phone"></i> (555) 890-GEAR</li>
+                        <li><i data-lucide="mail"></i> info@sportsrental.com</li>
                     </ul>
                 </div>
             </div>
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
-                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+                &copy; 2026 SportGo. All rights reserved. Professional Sports Equipment Outlet.
             </div>
         </div>
     </footer>
@@ -347,11 +342,28 @@
         <i data-lucide="chevron-up"></i>
     </button>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) {
                 lucide.createIcons();
+            }
+            
+            // Mousemove parallax effect for Home 1 Hero Visual
+            const container = document.getElementById('home1-parallax-container');
+            const img = document.getElementById('home1-hero-img');
+            if (container && img) {
+                container.addEventListener('mousemove', (e) => {
+                    const rect = container.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    img.style.transform = `scale(1) translate(${x * 20}px, ${y * 20}px)`;
+                });
+                container.addEventListener('mouseleave', () => {
+                    img.style.transform = 'scale(1) translate(0px, 0px)';
+                });
             }
         });
     </script>

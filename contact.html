@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Pawsome Experts</title>
+    <title>Contact Us | SportGo Gear Rental & Booking Service</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -16,7 +18,7 @@
             align-items: stretch;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 991px) {
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -29,7 +31,7 @@
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <a href="index.html" class="logo-brand">
-                <i data-lucide="dog"></i> Pawsome
+                <i data-lucide="trophy"></i> SportGo
             </a>
             <nav class="nav-links">
                 <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
@@ -53,7 +55,7 @@
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
-                    style="margin-top: 1rem; color: white; text-align: center;">Login</a>
+                    style="margin-top: 1rem; color: var(--primary-brand); text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
@@ -72,14 +74,48 @@
     </header>
 
     <main>
-        <!-- Section: Hero -->
-        <section class="hero-section reveal-zoom"
-            style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/1629781/pexels-photo-1629781.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 12rem 0; color: white; text-align: center; width: 100%;">
+        <!-- Section 1: Hero (Contact Redesign - About Format) -->
+        <section class="about-hero">
             <div class="container">
-                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2.5rem;">Connect with the
-                    experts</h1>
-                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Elite behavioral support
-                    is just a message away. Reach out to the team that transforms lives.</p>
+                <div class="about-grid">
+                    <div>
+                        <span class="hero-eyebrow">GET IN TOUCH</span>
+                        <h1 class="home1-heading heading-underline cyan-gradient-text" style="opacity: 1; animation: none; margin-bottom: 1.5rem;">We're Always<br>In Reach.</h1>
+                        
+                        <div class="outlet-status-pill" style="margin-bottom: 2rem;">
+                            <span class="status-pulse-dot"></span>
+                            <span>OPEN NOW (Closes at 8 PM)</span>
+                        </div>
+                        
+                        <div class="contact-info-panels">
+                            <div class="info-panel-item">
+                                <div class="panel-icon"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <h4>Call the Outlet</h4>
+                                    <p>(555) 890-GEAR</p>
+                                </div>
+                            </div>
+                            <div class="info-panel-item">
+                                <div class="panel-icon"><i data-lucide="mail"></i></div>
+                                <div>
+                                    <h4>Email Support</h4>
+                                    <p>info@sportsrental.com</p>
+                                </div>
+                            </div>
+                            <div class="info-panel-item">
+                                <div class="panel-icon"><i data-lucide="map-pin"></i></div>
+                                <div>
+                                    <h4>Visit Us</h4>
+                                    <p>123 Stadium Road, Arena District</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image-wrapper" id="contact-hero-img-wrapper" style="height: 450px; position: relative;">
+                        <img src="assets/images/contact_outlet_hero.png" alt="SportGo Outlet Store" id="contact-hero-img" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -90,53 +126,52 @@
                     <!-- Left: Contact Details -->
                     <div class="reveal-left" style="height: 100%;">
                         <div class="card"
-                            style="padding: clamp(2rem, 5vw, 4rem); height: 100%; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center;">
+                            style="padding: clamp(2rem, 5vw, 4rem); height: 100%; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; background: var(--card-bg);">
                             <span
-                                style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1.5rem;">Get
-                                In Touch</span>
-                            <h2 style="margin-bottom: 3rem;">We're Here to Help</h2>
+                                style="color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1.5rem; font-family: 'Space Grotesk', sans-serif;">Get In Touch</span>
+                            <h2 style="margin-bottom: 3rem;">Equipment Rental Desk</h2>
 
                             <div style="display: flex; flex-direction: column; gap: 2.5rem;">
                                 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                                     <div
-                                        style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                                        style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; border: 1px solid var(--border);">
                                         <i data-lucide="map-pin"></i>
                                     </div>
                                     <div>
-                                        <h4 style="margin-bottom: 0.5rem;">Our Home Office</h4>
-                                        <p style="opacity: 0.7;">123 Dog Lane, Manhattan, NY 10001</p>
+                                        <h4 style="margin-bottom: 0.5rem;">Outlet Location</h4>
+                                        <p style="opacity: 0.7; font-family: 'Inter', sans-serif;">123 Stadium Road, Arena District</p>
                                     </div>
                                 </div>
 
                                 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                                     <div
-                                        style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                                        style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; border: 1px solid var(--border);">
                                         <i data-lucide="phone"></i>
                                     </div>
                                     <div>
-                                        <h4 style="margin-bottom: 0.5rem;">Call Us</h4>
-                                        <p style="opacity: 0.7;">(555) 123-PAWS</p>
+                                        <h4 style="margin-bottom: 0.5rem;">Call Outlet Support</h4>
+                                        <p style="opacity: 0.7; font-family: 'Inter', sans-serif;">(555) 890-GEAR</p>
                                     </div>
                                 </div>
 
                                 <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
                                     <div
-                                        style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                                        style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; border: 1px solid var(--border);">
                                         <i data-lucide="mail"></i>
                                     </div>
                                     <div>
                                         <h4 style="margin-bottom: 0.5rem;">Email Us</h4>
-                                        <p style="opacity: 0.7;">hello@pawsome.com</p>
+                                        <p style="opacity: 0.7; font-family: 'Inter', sans-serif;">info@sportsrental.com</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div style="margin-top: 4rem;">
-                                <h4 style="margin-bottom: 1.5rem;">Follow the Pack</h4>
+                                <h4 style="margin-bottom: 1.5rem;">Connect With Us</h4>
                                 <div class="social-links" style="gap: 1.25rem;">
                                     <a href="#"><i data-lucide="instagram"></i></a>
                                     <a href="#"><i data-lucide="facebook"></i></a>
-                        <a href="#"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                                    <a href="#"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
                                     <a href="#"><i data-lucide="linkedin"></i></a>
                                 </div>
                             </div>
@@ -147,41 +182,38 @@
                     <div class="reveal-right">
                         <div class="card"
                             style="padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--border); background: var(--card-bg);">
-                            <h3 style="margin-bottom: 2.5rem;">Send a Message</h3>
+                            <h3 style="margin-bottom: 2.5rem;">Send a Gear Inquiry</h3>
                             <form style="display: flex; flex-direction: column; gap: 1.5rem;">
                                 <div class="form-group">
                                     <label
-                                        style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Full
-                                        Name</label>
-                                    <input type="text" placeholder="e.g. John Doe" class="auth-input"
+                                        style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Full Name</label>
+                                    <input type="text" placeholder="e.g. John Smith" class="auth-input"
                                         style="margin-bottom:0;">
                                 </div>
                                 <div class="form-group">
                                     <label
-                                        style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Email
-                                        Address</label>
+                                        style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Email Address</label>
                                     <input type="email" placeholder="e.g. john@example.com" class="auth-input"
                                         style="margin-bottom:0;">
                                 </div>
                                 <div class="form-group">
                                     <label
-                                        style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Subject</label>
+                                        style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Equipment Interest</label>
                                     <select class="auth-input" style="margin-bottom:0; width: 100%;">
-                                        <option>Select Case Type</option>
-                                        <option>Behavioral Audit</option>
-                                        <option>Puppy Training</option>
-                                        <option>Boarding Inquiry</option>
-                                        <option>General Question</option>
+                                        <option>Select Sport Category</option>
+                                        <option>Cricket Gear & Balling Machine</option>
+                                        <option>Badminton Rackets & Portable Net</option>
+                                        <option>Outdoor & Camping Equipment</option>
+                                        <option>Deposit Refund & Status Inquiry</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label
                                         style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Message</label>
-                                    <textarea placeholder="Tell us about your dog's journey..." rows="5"
+                                    <textarea placeholder="Specify your rental dates or equipment requirements..." rows="5"
                                         class="auth-input" style="margin-bottom:0;"></textarea>
                                 </div>
-                                <button class="btn btn-primary" style="padding: 1.5rem; margin-top: 1rem;">Send My
-                                    Inquiry</button>
+                                <button class="btn btn-primary" style="padding: 1.5rem; margin-top: 1rem;">Submit Inquiry</button>
                             </form>
                         </div>
                     </div>
@@ -192,8 +224,7 @@
         <!-- Section: Google Map -->
         <section style="padding: 0;">
             <div
-                style="width: 100%; height: 500px; filter: grayscale(1) contrast(1.2); opacity: 0.8; transition: all 0.5s ease;">
-                <!-- Replace with real embed code per user request -->
+                style="width: 100%; height: 500px; filter: grayscale(1) contrast(1.2) invert(1); opacity: 0.8; transition: all 0.5s ease;">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.1583091352!2d-74.11976373946229!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -209,46 +240,45 @@
             <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
-                        <i data-lucide="dog"></i> Pawsome
+                        <i data-lucide="trophy"></i> SportGo
                     </a>
-                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
-                        in-home canine training through empathy and modern behavioral science.</p>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Your trusted sports equipment rental outlet for Cricket, Badminton, and Outdoor gear with date slot booking and refundable deposit tracking.</p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="instagram"></i></a>
                         <a href="#"><i data-lucide="facebook"></i></a>
-                                                <a href="#"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                        <a href="#"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
                         <a href="#"><i data-lucide="linkedin"></i></a>
                     </div>
                 </div>
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="index.html#testimonials">Success Stories</a></li>
-                        <li><a href="programs.html">Elite Programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="index.html#testimonials">Renter Reviews</a></li>
+                        <li><a href="programs.html">Gear Categories</a></li>
+                        <li><a href="about.html">About Outlet</a></li>
+                        <li><a href="services.html">Rental Services</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                    <h4 style="margin-bottom: 1.5rem;">Legal & Deposits</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="pricing.html">Rental Rates</a></li>
+                        <li><a href="#">Deposit Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
-                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
-                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    <h4 style="margin-bottom: 1.5rem;">Contact Outlet</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><i data-lucide="map-pin"></i> 123 Stadium Road, Arena District</li>
+                        <li><i data-lucide="phone"></i> (555) 890-GEAR</li>
+                        <li><i data-lucide="mail"></i> info@sportsrental.com</li>
                     </ul>
                 </div>
             </div>
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
-                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+                &copy; 2026 SportGo. All rights reserved. Professional Sports Equipment Outlet.
             </div>
         </div>
     </footer>
@@ -258,7 +288,35 @@
         <i data-lucide="chevron-up"></i>
     </button>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // Map grid subtle 3D perspective hover tilt
+            const wrapper = document.getElementById('contact-map-wrapper');
+            if (wrapper) {
+                wrapper.addEventListener('mousemove', (e) => {
+                    const rect = wrapper.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    // Rotate map slightly based on pointer position relative to center
+                    const rotateX = -y / 15;
+                    const rotateY = x / 15;
+                    wrapper.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+                });
+
+                wrapper.addEventListener('mouseleave', () => {
+                    wrapper.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

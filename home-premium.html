@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium | High-End Dog Training</title>
+    <title>Premium Rental | SportGo Gear Rental & Booking Service</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -21,7 +23,7 @@
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <a href="index.html" class="logo-brand">
-                <i data-lucide="dog"></i> Pawsome
+                <i data-lucide="trophy"></i> SportGo
             </a>
             <nav class="nav-links">
                 <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
@@ -45,7 +47,7 @@
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
-                    style="margin-top: 1rem; color: white; text-align: center;">Login</a>
+                    style="margin-top: 1rem; color: var(--primary-brand); text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
@@ -64,21 +66,36 @@
     </header>
 
     <main>
-        <!-- Section 1: Hero (Premium) -->
-        <section class="hero-section"
-            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/6000304/pexels-photo-6000304.jpeg') no-repeat center center/cover;">
-            <div class="container" style="text-align: center;">
-                <div class="reveal-zoom" style="max-width: 900px; margin: 0 auto; color: white;">
-                    <span
-                        style="background: var(--primary); padding: 0.5rem 2rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.8rem; color: white; display: inline-block; margin-bottom: 2rem;">Elite
-                        Behavioral Specialists</span>
-                    <h1 style="margin-bottom: 2rem;">The Gold Standard for Your Better Half</h1>
-                    <p style="font-size: 1.25rem; margin-bottom: 4rem; opacity: 0.9;">Unmatched results for selective
-                        owners who expect the very best for their canine companions. High-fidelity training that lasts a
-                        lifetime.</p>
-                    <div class="hero-btns" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="pricing.html" class="btn btn-primary hero-btn">Start the Transformation</a>
-                        <a href="contact.html" class="btn btn-secondary hero-btn hero-btn-white">Talk to a Specialist</a>
+        <!-- Section 1: Hero (Premium Redesign) -->
+        <section class="home2-hero">
+            <!-- Background Image -->
+            <div class="home2-bg" style="background-image: url('assets/images/hero-premium.png');"></div>
+            <!-- Overlay and grid/streak -->
+            <div class="home2-overlay"></div>
+            <div class="light-streak"></div>
+            
+            <div class="container home2-content">
+                <div class="home2-grid">
+                    <div>
+                        <span class="hero-eyebrow char-reveal" style="animation-delay: 0.1s;">PREMIUM SPORTS RENTALS</span>
+                        <h1 class="home1-heading cyan-gradient-text" style="margin-bottom: 2rem; opacity: 1; animation: none;">
+                            <span class="char-reveal" style="animation-delay: 0.2s;">Your Game.</span><br>
+                            <span class="char-reveal" style="animation-delay: 0.4s;">Your Gear.</span><br>
+                            <span class="char-reveal" style="animation-delay: 0.6s;">Your Time.</span>
+                        </h1>
+                        <p class="hero-text char-reveal" style="animation-delay: 0.8s; max-width: 650px; opacity: 1; animation: none;">Premium sports equipment, flexible rental slots and effortless online booking.</p>
+                        <div class="hero-ctas char-reveal" style="animation-delay: 1s; opacity: 1; animation: none;">
+                            <a href="programs.html" class="btn btn-primary hero-btn pulse-btn">Explore Gear <i data-lucide="chevron-right"></i></a>
+                            <a href="services.html" class="btn btn-secondary hero-btn hero-btn-white">How It Works</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="home2-widget">
+                            <span class="widget-status">Available Today</span>
+                            <h3 style="color: white; margin-bottom: 0.5rem; font-size: 2.2rem; font-family: 'Space Grotesk', sans-serif;">120+ Items</h3>
+                            <p style="opacity: 0.8; font-size: 0.95rem; margin-bottom: 1.5rem; font-family: 'Inter', sans-serif;">Top tier sports & adventure gear ready to book instantly.</p>
+                            <a href="dashboard.html" class="btn btn-primary" style="width: 100%; border-radius: 12px; font-weight: 700;">Check Availability</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,24 +105,20 @@
         <section>
             <div class="container">
                 <div class="grid-resp-2">
-                    <div class="reveal-left">
+                    <div class="reveal-left" style="display: flex; flex-direction: column; justify-content: center;">
                         <span
-                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">The
-                            Evolution of Behavior</span>
-                        <h2 style="margin: 1.5rem 0 2.5rem;">From Stress to Serenity</h2>
-                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2rem;">It's not just about commands;
-                            it's about the emotional state of your dog. We solve reactivity, anxiety, and complex
-                            behavioral issues that other trainers avoid.</p>
+                            style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-family: 'Space Grotesk', sans-serif;">Smart Gear Ownership</span>
+                        <h2 style="margin: 1.5rem 0 2.5rem;">Why Buy High Cost Gear When You Can Rent Pro Kits?</h2>
+                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2rem;">Why spend thousands purchasing premium English Willow bats, carbon badminton rackets, or bulky outdoor tents? Rent top-tier gear for your exact playing dates with zero maintenance worries.</p>
                         <div
-                            style="padding: 2rem; background: var(--card-bg); border-radius: 24px; border-left: 8px solid var(--primary);">
-                            <p style="font-style: italic; opacity: 0.8;">"We treat the root cause, not the symptoms. No
-                                coercion, just genuine behavioral science and trust rebuilding."</p>
-                            <p style="margin-top: 1rem; font-weight: 800;">- Alex Paws, Lead Specialist</p>
+                            style="padding: 2rem; background: var(--card-bg); border-radius: 24px; border-left: 8px solid var(--accent); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                            <p style="font-style: italic; opacity: 0.8;">"We provide tournament-grade equipment at a fraction of buying cost. Flexible date booking with automated deposit refund processing."</p>
+                            <p style="margin-top: 1rem; font-weight: 800;">- Marcus Vance, Head Equipment Manager</p>
                         </div>
                     </div>
-                    <div class="reveal-right" style="display: flex; justify-content: center;">
-                        <img src="assets/images/problem-dog.png" alt="Before & After"
-                            style="border-radius: 40px; width: 100%; max-width: 450px; height: auto;">
+                    <div class="reveal-right" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/images/sports_cricket_gear_1786624422258.png" alt="Pro Sports Gear Setup"
+                            style="border-radius: 40px; width: 100%; max-width: 450px; height: auto; box-shadow: 0 20px 45px rgba(0,0,0,0.15);">
                     </div>
                 </div>
             </div>
@@ -115,37 +128,36 @@
         <section style="background: var(--card-bg);">
             <div class="container">
                 <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
-                    <h2>Our Signature Series</h2>
-                    <p style="opacity: 0.7;">Select the foundational pathway for your dog's journey.</p>
+                    <h2>Signature Rental Collections</h2>
+                    <p style="opacity: 0.7;">Select your ideal equipment tier for cricket, badminton, or outdoor expeditions.</p>
                 </div>
                 <div class="grid-3">
                     <div class="card reveal-left">
                         <div class="card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/16202421/pexels-photo-16202421.jpeg"
-                                alt="Puppy Prestige">
+                            <img src="assets/images/service-behavior.png"
+                                alt="Cricket Pro Series">
                         </div>
-                        <h3>Puppy Prestige</h3>
-                        <p>Start the journey correctly. High-end socialization and basic command mastery in weeks.</p>
-                        <a href="programs.html" class="card-cta">Explore Program <i data-lucide="arrow-right"></i></a>
+                        <h3>Cricket Pro Series</h3>
+                        <p>Grade 1 English Willow bats, lightweight protective armor, match balls, and portable balling machines.</p>
+                        <a href="programs.html" class="card-cta">View Collection <i data-lucide="arrow-right"></i></a>
                     </div>
                     <div class="card reveal">
                         <div class="card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/30951353/pexels-photo-30951353.jpeg"
-                                alt="Zen Behavioral">
+                            <img src="assets/images/service-obedience.png"
+                                alt="Badminton Tournament Pack">
                         </div>
-                        <h3>Zen Behavioral</h3>
-                        <p>Calm composure for the reactive dog. Specialized desensitization protocols for city living.
-                        </p>
-                        <a href="programs.html" class="card-cta">Explore Program <i data-lucide="arrow-right"></i></a>
+                        <h3>Badminton Tournament Pack</h3>
+                        <p>Pro graphite rackets strung at 28+ lbs, goose feather shuttlecock bundles, and portable court nets.</p>
+                        <a href="programs.html" class="card-cta">View Collection <i data-lucide="arrow-right"></i></a>
                     </div>
                     <div class="card reveal-right">
                         <div class="card-img-wrapper">
-                            <img src="https://images.pexels.com/photos/27132949/pexels-photo-27132949.jpeg"
-                                alt="Master Obedience">
+                            <img src="assets/images/service-puppy.png"
+                                alt="Wilderness Camping Pack">
                         </div>
-                        <h3>Master Obedience</h3>
-                        <p>The elite standard. Total focus and reliability under any distraction, anywhere.</p>
-                        <a href="programs.html" class="card-cta">Explore Program <i data-lucide="arrow-right"></i></a>
+                        <h3>Wilderness Camping Pack</h3>
+                        <p>Waterproof dome tents, ergonomic trekking poles, sleeping gear, and night trail headlamps.</p>
+                        <a href="programs.html" class="card-cta">View Collection <i data-lucide="arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -153,16 +165,13 @@
 
         <!-- Section 4: Training Environment (IMAGE BG) -->
         <section class="parallax-section"
-            style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('assets/images/about-team.png'); padding: clamp(6rem, 15vw, 12rem) 0; color: white; text-align: center;">
+            style="background-image: linear-gradient(rgba(11, 19, 43, 0.85), rgba(11, 19, 43, 0.85)), url('assets/images/about-team.png'); padding: clamp(6rem, 15vw, 12rem) 0; color: white; text-align: center;">
             <div class="container">
                 <div class="reveal-zoom">
-                    <h2 style="color: white; margin-bottom: 2rem;">Real-World Relevance</h2>
-                    <p style="font-size: 1.25rem; opacity: 0.8; max-width: 800px; margin: 0 auto 4rem;">Training in a
-                        sterilized facility doesn't work. We train in the actual streets, parks, and homes where life
-                        happens. Your dog's behavior matters every day, not just on training day.</p>
+                    <h2 style="color: white; margin-bottom: 2rem;">Quality Inspected Before Every Booking</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.8; max-width: 800px; margin: 0 auto 4rem; font-family: 'Inter', sans-serif;">Equipment failure during a match or trip is unacceptable. Our outlet inspects, oils, strings, and sanitizes every piece of gear prior to pickup.</p>
                     <a href="services.html" class="btn btn-primary"
-                        style="padding: 1rem 3rem; font-size: 1.1rem; width: fit-content; margin: 0 auto;">See the
-                        Method</a>
+                        style="padding: 1rem 3rem; font-size: 1.1rem; width: fit-content; margin: 0 auto;">Our Quality Process</a>
                 </div>
             </div>
         </section>
@@ -171,34 +180,28 @@
         <section>
             <div class="container">
                 <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
-                    <h2>Join the Elite Pack</h2>
-                    <p style="opacity: 0.7;">Trusted by over 500 selective pet parents.</p>
+                    <h2>Trusted by 1000+ Players & Clubs</h2>
+                    <p style="opacity: 0.7;">See why athletes rely on SportGo for gear rentals.</p>
                 </div>
                 <div class="grid-resp-2">
-                    <div class="card reveal-left" style="background: var(--bg); border-color: var(--primary);">
+                    <div class="card reveal-left" style="background: var(--card-bg); border-color: var(--border);">
                         <div class="testimonial-card-header" style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
                             <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Mark S."
-                                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); background: var(--card-bg);">
+                                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); background: var(--card-bg);">
                             <div style="flex: 1; min-width: 250px;">
-                                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">"The most professional
-                                    team I've ever dealt with. They don't just train the dog; they coach the family on
-                                    how to communicate with clarity and empathy."</p>
-                                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--primary);">Mark S.,
-                                    Portfolio Manager</h4>
+                                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; font-family: 'Inter', sans-serif;">"The most professional equipment rental experience. Booking slots by date and managing security deposits online saved us hours."</p>
+                                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--accent);">Mark S., Sports Club Organizer</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="card reveal-right" style="background: var(--bg); border-color: var(--primary);">
+                    <div class="card reveal-right" style="background: var(--card-bg); border-color: var(--border);">
                         <div class="testimonial-card-header" style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
                             <img src="https://images.pexels.com/photos/6234609/pexels-photo-6234609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                                 alt="Elena K."
-                                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); background: var(--card-bg);">
+                                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); background: var(--card-bg);">
                             <div style="flex: 1; min-width: 250px;">
-                                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">"Remarkable shift in
-                                    behavior after only three sessions. Pawsome provides an ROI that you can't measure
-                                    in dollars—the peace of mind is priceless."</p>
-                                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--primary);">Elena K.,
-                                    Veterinary Surgeon</h4>
+                                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; font-family: 'Inter', sans-serif;">"Rentals arrive in peak condition. The deposit status tracking on the customer dashboard gives absolute peace of mind."</p>
+                                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--accent);">Elena K., Badminton Player</h4>
                             </div>
                         </div>
                     </div>
@@ -207,31 +210,27 @@
         </section>
 
         <!-- Section 6: Premium Contact CTA -->
-        <section style="background: var(--primary); color: white; padding: 8rem 0; text-align: center;">
+        <section style="background: var(--primary-brand); color: white; padding: 8rem 0; text-align: center;">
             <div class="container">
                 <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
-                    <h2 style="color: white; margin-bottom: 1.5rem;">Experience the
-                        Difference</h2>
-                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem;">Reserve your confidential
-                        behavioral audit today and start your dog's journey to absolute reliability.</p>
-                    <a href="contact.html" class="btn btn-secondary"
-                        style="background: white; color: var(--primary); padding: 1.25rem clamp(1.5rem, 5vw, 4rem); font-size: clamp(1rem, 5vw, 1.25rem); border: none; width: fit-content; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.5rem; margin: 0 auto;">Book
-                        My Consultation <i data-lucide="chevron-right"></i></a>
+                    <h2 style="color: white; margin-bottom: 1.5rem;">Experience Effortless Gear Booking</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem; font-family: 'Inter', sans-serif;">Reserve your cricket, badminton, or outdoor gear online today and manage your deposit status hassle-free.</p>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="padding: 1.25rem clamp(1.5rem, 5vw, 4rem); font-size: clamp(1rem, 5vw, 1.25rem); border: none; width: fit-content; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.5rem; margin: 0 auto;">Book Equipment Now <i data-lucide="chevron-right"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer same as index --> <!-- 🦶 FOOTER -->
+    <!-- 🦶 FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
-                        <i data-lucide="dog"></i> Pawsome
+                        <i data-lucide="trophy"></i> SportGo
                     </a>
-                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
-                        in-home canine training through empathy and modern behavioral science.</p>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Your trusted sports equipment rental outlet for Cricket, Badminton, and Outdoor gear with date slot booking and refundable deposit tracking.</p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="instagram"></i></a>
                         <a href="#"><i data-lucide="facebook"></i></a>
@@ -241,33 +240,33 @@
                 </div>
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="index.html#testimonials">Success Stories</a></li>
-                        <li><a href="programs.html">Elite Programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="index.html#testimonials">Renter Reviews</a></li>
+                        <li><a href="programs.html">Gear Categories</a></li>
+                        <li><a href="about.html">About Outlet</a></li>
+                        <li><a href="services.html">Rental Services</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                    <h4 style="margin-bottom: 1.5rem;">Legal & Deposits</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="pricing.html">Rental Rates</a></li>
+                        <li><a href="#">Deposit Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
-                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
-                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    <h4 style="margin-bottom: 1.5rem;">Contact Outlet</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><i data-lucide="map-pin"></i> 123 Stadium Road, Arena District</li>
+                        <li><i data-lucide="phone"></i> (555) 890-GEAR</li>
+                        <li><i data-lucide="mail"></i> info@sportsrental.com</li>
                     </ul>
                 </div>
             </div>
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
-                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+                &copy; 2026 SportGo. All rights reserved. Professional Sports Equipment Outlet.
             </div>
         </div>
     </footer>
@@ -277,6 +276,8 @@
         <i data-lucide="chevron-up"></i>
     </button>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 </body>
 

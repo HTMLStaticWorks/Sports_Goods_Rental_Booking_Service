@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Elite Training Spectrum</title>
+    <title>Services | SportGo Gear Rental & Booking Service</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -14,7 +16,7 @@
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <a href="index.html" class="logo-brand">
-                <i data-lucide="dog"></i> Pawsome
+                <i data-lucide="trophy"></i> SportGo
             </a>
             <nav class="nav-links">
                 <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
@@ -38,7 +40,7 @@
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
-                    style="margin-top: 1rem; color: white; text-align: center;">Login</a>
+                    style="margin-top: 1rem; color: var(--primary-brand); text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
@@ -57,14 +59,49 @@
     </header>
 
     <main>
-        <!-- Section 1: Hero (Services) -->
-        <section class="hero-section reveal-zoom"
-            style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1633522/pexels-photo-1633522.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 12rem 0; color: white; text-align: center; width: 100%;">
+        <!-- Section 1: Hero (Services Redesign - About Format) -->
+        <section class="about-hero">
             <div class="container">
-                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2rem;">Elite Training
-                    Programs</h1>
-                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Tailored behavioral
-                    science for every life stage. We bring the results directly to your living room.</p>
+                <div class="about-grid">
+                    <div>
+                        <span class="hero-eyebrow">RENTAL JOURNEY</span>
+                        <h1 class="home1-heading heading-underline cyan-gradient-text" style="opacity: 1; animation: none; margin-bottom: 1.5rem;">From Selection<br>To Game Day.</h1>
+                        <p class="hero-text" style="opacity: 1; animation: none; margin-top: 1rem;">Experience a seamless process designed to get you the best gear exactly when you need it.</p>
+                        
+                        <div class="journey-flow-vertical" style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div class="journey-step" style="opacity: 0; transform: translateY(20px); display: flex; gap: 1rem; align-items: flex-start;" data-delay="100">
+                                <span class="journey-step-num" style="font-size: 1.25rem; font-weight: 800; color: var(--accent); font-family: 'Space Grotesk', sans-serif;">01</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.25rem 0; font-size: 1.1rem; font-family: 'Space Grotesk', sans-serif;">Choose Your Gear</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Select tournament-grade equipment tailored to your level.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="journey-step" style="opacity: 0; transform: translateY(20px); display: flex; gap: 1rem; align-items: flex-start;" data-delay="300">
+                                <span class="journey-step-num" style="font-size: 1.25rem; font-weight: 800; color: var(--accent); font-family: 'Space Grotesk', sans-serif;">02</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.25rem 0; font-size: 1.1rem; font-family: 'Space Grotesk', sans-serif;">Pick Your Time</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Reserve precise date slots and manage security deposits easily.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="journey-step" style="opacity: 0; transform: translateY(20px); display: flex; gap: 1rem; align-items: flex-start;" data-delay="500">
+                                <span class="journey-step-num" style="font-size: 1.25rem; font-weight: 800; color: var(--accent); font-family: 'Space Grotesk', sans-serif;">03</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.25rem 0; font-size: 1.1rem; font-family: 'Space Grotesk', sans-serif;">Play & Return</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Get your gear delivered, win the match, and drop it off.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 2.5rem;">
+                            <a href="dashboard.html" class="btn btn-primary hero-btn pulse-btn">Start Booking <i data-lucide="calendar"></i></a>
+                        </div>
+                    </div>
+                    <div class="about-image-wrapper" id="services-hero-img-wrapper">
+                        <img src="assets/images/sports_badminton_gear_1786624442966.png" alt="Pro Sports Gear" id="services-hero-img">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -73,31 +110,30 @@
             <div class="container">
                 <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
                     <span
-                        style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">The
-                        Pawsome Spectrum</span>
-                    <h2 style="margin-top: 1rem;">Solutions for Every Paw</h2>
+                        style="color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-family: 'Space Grotesk', sans-serif;">Core Services</span>
+                    <h2 style="margin-top: 1rem;">Solutions for Every Sport & Match</h2>
                 </div>
                 <div class="grid-3 stagger-container">
                     <div class="card reveal-left">
                         <div class="card-img-wrapper"><img
-                                src="https://images.pexels.com/photos/34762918/pexels-photo-34762918.jpeg"
-                                alt="Puppy Foundations"></div>
-                        <h3>Puppy Foundations</h3>
-                        <p>Critical socialization and foundation behaviors for dogs under 6 months old.</p>
+                                src="assets/images/sports_cricket_gear_1786624422258.png"
+                                alt="Cricket Equipment Rental"></div>
+                        <h3>Cricket Equipment Rental</h3>
+                        <p>Complete cricket gear sets including English Willow bats, protective leg guards, helmets, and balling machines.</p>
                     </div>
                     <div class="card blur-in">
                         <div class="card-img-wrapper"><img
-                                src="https://images.pexels.com/photos/1174081/pexels-photo-1174081.jpeg"
-                                alt="Calm & Control"></div>
-                        <h3>Calm & Control</h3>
-                        <p>Mastering leash reactivity and impulse control in high-distraction environments.</p>
+                                src="assets/images/sports_badminton_gear_1786624442966.png"
+                                alt="Badminton Rackets & Stringing"></div>
+                        <h3>Badminton Rackets & Nets</h3>
+                        <p>Carbon fiber pro rackets with custom string tensioning, tournament shuttles, and portable net installations.</p>
                     </div>
                     <div class="card reveal-right">
                         <div class="card-img-wrapper"><img
-                                src="https://images.pexels.com/photos/20728624/pexels-photo-20728624.jpeg"
-                                alt="Off-Leash Freedom"></div>
-                        <h3>Off-Leash Freedom</h3>
-                        <p>Bulletproof recall and reliable distance commands for a life of exploration.</p>
+                                src="assets/images/sports_outdoor_gear_1786624475770.png"
+                                alt="Outdoor Adventure Outfits"></div>
+                        <h3>Outdoor Adventure Gear</h3>
+                        <p>All-weather camping tents, hiking backpacks, trekking poles, camp lights, and mountain bike rentals.</p>
                     </div>
                 </div>
             </div>
@@ -108,20 +144,16 @@
             <div class="container">
                 <div class="grid-resp-2">
                     <div class="reveal-left" style="display: flex; justify-content: center; align-items: center;">
-                        <img src="https://images.pexels.com/photos/7788660/pexels-photo-7788660.jpeg"
-                            alt="Result Guarantee"
-                            class="service-result-img">
+                        <img src="assets/images/how-it-works.png"
+                            alt="Deposit Guarantee & Inspection"
+                            class="service-result-img" style="border-radius: 24px; max-width: 85%;">
                     </div>
-                    <div class="reveal-right">
+                    <div class="reveal-right" style="display: flex; flex-direction: column; justify-content: center;">
                         <span
-                            style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">The
-                            Pawsome Promise</span>
-                        <h2 style="margin: 1.5rem 0 2rem;">Lasting Result Guarantee</h2>
-                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2.5rem; line-height: 1.8;">Our
-                            programs are designed for long-term sustainability. We don't just train during the session;
-                            we provide the digital tools, video libraries, and ongoing support you need to maintain the
-                            behavior for years to come.</p>
-                        <a href="pricing.html" class="btn btn-secondary">Explore Membership Perks</a>
+                            style="color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-family: 'Space Grotesk', sans-serif;">Deposit Integrity</span>
+                        <h2 style="margin: 1.5rem 0 2rem;">100% Refundable Security Deposit</h2>
+                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2.5rem; line-height: 1.8; font-family: 'Inter', sans-serif;">Our rental platform offers total transparency. All security deposits are logged in your customer dashboard and returned instantly upon equipment inspection during check-in. Zero hidden deduction fees.</p>
+                        <a href="pricing.html" class="btn btn-primary" style="width: fit-content;">View Rental Rates & Deposits</a>
                     </div>
                 </div>
             </div>
@@ -132,54 +164,45 @@
             <div class="container">
                 <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
                     <span
-                        style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Comparison</span>
-                    <h2 style="margin-top: 1rem; margin-bottom: 1.5rem;">Choose Your Pathway</h2>
-                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">A transparent look at our premium pathways and what you can expect from each engagement.</p>
+                        style="color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-family: 'Space Grotesk', sans-serif;">Equipment Service Tiers</span>
+                    <h2 style="margin-top: 1rem; margin-bottom: 1.5rem;">Choose Your Service Level</h2>
+                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8; max-width: 600px; margin: 0 auto; font-family: 'Inter', sans-serif;">A transparent look at our rental tiers and included perks.</p>
                 </div>
                 <div class="table-responsive" style="overflow-x: auto; padding: 1rem;">
                     <table
-                        style="width: 100%; border-collapse: collapse; min-width: 700px; background: var(--card-bg); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                        <thead style="background: var(--secondary); color: white;">
+                        style="width: 100%; border-collapse: collapse; min-width: 700px; background: var(--card-bg); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                        <thead style="background: var(--primary-brand); color: white;">
                             <tr>
-                                <th style="padding: 2rem; text-align: left;">Features</th>
-                                <th style="padding: 2rem; text-align: center;">Basic</th>
-                                <th style="padding: 2rem; text-align: center;">Elite</th>
-                                <th style="padding: 2rem; text-align: center;">Master</th>
+                                <th style="padding: 2rem; text-align: left;">Rental Service Features</th>
+                                <th style="padding: 2rem; text-align: center;">Standard Day Pass</th>
+                                <th style="padding: 2rem; text-align: center;">Weekend Tournament Pack</th>
+                                <th style="padding: 2rem; text-align: center;">Pro League Monthly Pass</th>
                             </tr>
                         </thead>
                         <tbody style="opacity: 0.9;">
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1.5rem 2rem; font-weight: 600;">In-Home Sessions</td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;">4</td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;">8</td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;">12</td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Equipment Sanitization</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Digital Portal</td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: var(--success);"></i></td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: var(--success);"></i></td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: var(--success);"></i></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Live Deposit Tracking</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Video Review</td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
-                                        style="opacity: 0.3;"></i></td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: var(--success);"></i></td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: var(--success);"></i></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Doorstep Delivery & Pickup</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus" style="opacity: 0.3;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
                             </tr>
                             <tr>
-                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Priority Support</td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
-                                        style="opacity: 0.3;"></i></td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
-                                        style="opacity: 0.3;"></i></td>
-                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: var(--success);"></i></td>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Custom Racket Stringing / Bat Knocking</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus" style="opacity: 0.3;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus" style="opacity: 0.3;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check" style="color: var(--accent);"></i></td>
                             </tr>
                         </tbody>
                     </table>
@@ -188,22 +211,15 @@
         </section>
 
         <!-- Section 5: Premium CTA (Centered Stack) -->
-        <section style="background: var(--primary); padding: 8rem 0; text-align: center; color: white;">
-                <div class="container">
-                    <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
-                        <h2
-                            style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 2rem; color: white;">
-                            Ready
-                            for a better-behaved companion?</h2>
-                        <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3.5rem; line-height: 1.6;">Join
-                            hundreds of happy households who have transformed their lives through our behavioral science
-                            protocols. Your dog's potential is just one session away.</p>
-                        <a href="pricing.html" class="btn btn-primary"
-                            style="padding: 1.5rem 3rem; font-size: 1.1rem; border-radius: 50px; background: white; color: var(--primary); border: none;">Book
-                            Your Initial Session</a>
-                    </div>
+        <section style="background: var(--primary-brand); padding: 8rem 0; text-align: center; color: white;">
+            <div class="container">
+                <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 2rem; color: white;">Book Your Pro Equipment Slot</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3.5rem; line-height: 1.6; font-family: 'Inter', sans-serif;">Browse available sports gear, lock in your rental dates, and manage deposit status online in seconds.</p>
+                    <a href="pricing.html" class="btn btn-primary hero-btn">Explore Rates & Reserve</a>
                 </div>
-            </section>
+            </div>
+        </section>
     </main>
 
     <!-- 🦶 FOOTER -->
@@ -212,10 +228,9 @@
             <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
-                        <i data-lucide="dog"></i> Pawsome
+                        <i data-lucide="trophy"></i> SportGo
                     </a>
-                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
-                        in-home canine training through empathy and modern behavioral science.</p>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Your trusted sports equipment rental outlet for Cricket, Badminton, and Outdoor gear with date slot booking and refundable deposit tracking.</p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="instagram"></i></a>
                         <a href="#"><i data-lucide="facebook"></i></a>
@@ -225,33 +240,33 @@
                 </div>
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="index.html#testimonials">Success Stories</a></li>
-                        <li><a href="programs.html">Elite Programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="index.html#testimonials">Renter Reviews</a></li>
+                        <li><a href="programs.html">Gear Categories</a></li>
+                        <li><a href="about.html">About Outlet</a></li>
+                        <li><a href="services.html">Rental Services</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                    <h4 style="margin-bottom: 1.5rem;">Legal & Deposits</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="pricing.html">Rental Rates</a></li>
+                        <li><a href="#">Deposit Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
-                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
-                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    <h4 style="margin-bottom: 1.5rem;">Contact Outlet</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><i data-lucide="map-pin"></i> 123 Stadium Road, Arena District</li>
+                        <li><i data-lucide="phone"></i> (555) 890-GEAR</li>
+                        <li><i data-lucide="mail"></i> info@sportsrental.com</li>
                     </ul>
                 </div>
             </div>
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
-                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+                &copy; 2026 SportGo. All rights reserved. Professional Sports Equipment Outlet.
             </div>
         </div>
     </footer>
@@ -261,7 +276,35 @@
         <i data-lucide="chevron-up"></i>
     </button>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // Journey steps reveal sequentially
+            const steps = document.querySelectorAll('.journey-step');
+            steps.forEach(step => {
+                const delay = step.getAttribute('data-delay');
+                setTimeout(() => {
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateY(0)';
+                }, delay);
+            });
+
+            // Equipment image slowly floats on scroll
+            const servicesImg = document.getElementById('services-hero-img');
+            window.addEventListener('scroll', () => {
+                if (servicesImg) {
+                    const scrollPos = window.scrollY;
+                    servicesImg.style.transform = `translateY(${scrollPos * 0.08}px)`;
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Pawsome Connect</title>
+    <title>Customer Dashboard | SportGo Gear Rental & Booking Service</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -12,17 +14,13 @@
         :root {
             --dash-sidebar-w: 280px;
             --dash-header-h: 100px;
-            --dash-bg: var(--slate-light);
-        }
-
-        body[data-theme="dark"] {
-            --dash-bg: #000000;
+            --dash-bg: var(--bg);
         }
 
         .dashboard-container {
             display: flex;
             height: 100vh;
-            background: var(--dash-bg);
+            background: var(--bg);
             overflow: hidden;
         }
 
@@ -67,6 +65,7 @@
             cursor: pointer;
             transition: var(--transition);
             word-break: break-word;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .nav-item i {
@@ -79,8 +78,8 @@
 
         .nav-item:hover,
         .nav-item.active {
-            background: rgba(var(--primary-rgb), 0.1);
-            color: var(--primary);
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
         }
 
         .nav-item.logout {
@@ -98,7 +97,6 @@
             display: flex;
             flex-direction: column;
             min-width: 0;
-            /* Fix flex overflow */
             overflow-y: auto;
             transition: var(--transition);
         }
@@ -324,7 +322,7 @@
         }
 
         .dash-card:hover {
-            border-color: var(--primary);
+            border-color: var(--accent);
         }
 
         /* FORM FIX */
@@ -350,115 +348,32 @@
             font-family: inherit;
         }
 
-        /* VIDEO GRID */
-        /* VIDEO PLAY BUTTON PULSE ANIMATION */
-        @keyframes pulse-ring {
-            0%   { transform: scale(1);    opacity: 0.6; }
-            70%  { transform: scale(1.8);  opacity: 0; }
-            100% { transform: scale(1.8);  opacity: 0; }
-        }
-
-        .video-grid {
+        .catalog-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 2rem;
         }
 
-        .video-grid>.dash-card {
+        .catalog-grid>.dash-card {
             flex: 1 1 300px;
             max-width: 420px;
         }
 
-        .video-thumb {
+        .gear-thumb {
             width: 100%;
-            aspect-ratio: 16/9;
+            height: 200px;
             background-size: cover;
             background-position: center;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
             position: relative;
-            overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .video-thumb:hover {
-            transform: scale(1.02);
-        }
-
-        .video-thumb::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.35);
-            transition: background 0.4s ease;
-        }
-
-        .video-thumb:hover::after {
-            background: rgba(0, 0, 0, 0.15);
-        }
-
-        /* Play button wrapper — real div so ::before pseudo-elements work */
-        .play-btn {
-            position: relative;
-            z-index: 10;
-            width: 62px;
-            height: 62px;
-            background: rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(6px);
-            border: 2px solid rgba(255, 255, 255, 0.45);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        background 0.3s ease,
-                        border-color 0.3s ease,
-                        box-shadow 0.3s ease;
-        }
-
-        /* Pulse ring */
-        .play-btn::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 2px solid var(--primary);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .video-thumb:hover .play-btn::before {
-            opacity: 1;
-            animation: pulse-ring 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        .video-thumb:hover .play-btn {
-            transform: scale(1.25);
-            background: var(--primary);
-            border-color: var(--primary);
-            box-shadow: 0 0 0 10px rgba(217, 119, 6, 0.2),
-                        0 0 32px rgba(217, 119, 6, 0.55);
-        }
-
-        .video-thumb:hover .play-btn [data-lucide],
-        .video-thumb:hover .play-btn svg.lucide {
-            color: white !important;
-        }
-
-
-        /* NO SCROLL OVERFLOW */
         * {
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
 
-        /* DARK MODE DATE/TIME FIX */
         [data-theme="dark"] .dash-input::-webkit-calendar-picker-indicator {
             filter: invert(1);
             cursor: pointer;
@@ -473,25 +388,25 @@
             <div class="sidebar-header">
                 <button id="mobile-menu-trigger"><i data-lucide="menu"></i></button>
                 <a href="index.html" class="logo-brand">
-                    <i data-lucide="dog"></i> Pawsome
+                    <i data-lucide="trophy"></i> SportGo
                 </a>
                 <button id="close-sidebar" style="background:none; border:none; color:var(--text);"><i
                         data-lucide="x"></i></button>
             </div>
             <div class="nav-items">
                 <div class="nav-item active" data-target="overview"><i data-lucide="layout-dashboard"></i>
-                    <span>Dashboard</span>
+                    <span>Overview</span>
                 </div>
-                <div class="nav-item" data-target="book"><i data-lucide="plus-circle"></i> <span>Book Session</span>
+                <div class="nav-item" data-target="book"><i data-lucide="calendar-plus"></i> <span>Book Equipment</span>
                 </div>
-                <div class="nav-item" data-target="sessions"><i data-lucide="calendar"></i> <span>My Sessions</span>
+                <div class="nav-item" data-target="rentals"><i data-lucide="package-check"></i> <span>Active Rentals</span>
                 </div>
-                <div class="nav-item" data-target="progress"><i data-lucide="award"></i> <span>Dog Progress</span></div>
-                <div class="nav-item" data-target="videos"><i data-lucide="video"></i> <span>Training Videos</span>
+                <div class="nav-item" data-target="deposits"><i data-lucide="shield-check"></i> <span>Manage Deposits</span></div>
+                <div class="nav-item" data-target="catalog"><i data-lucide="grid"></i> <span>Equipment Catalog</span>
                 </div>
-                <div class="nav-item" data-target="homework"><i data-lucide="clipboard-list"></i> <span>Homework</span>
+                <div class="nav-item" data-target="checklist"><i data-lucide="clipboard-check"></i> <span>Return Checklist</span>
                 </div>
-                <div class="nav-item" data-target="notes"><i data-lucide="sticky-note"></i> <span>Trainer Notes</span>
+                <div class="nav-item" data-target="notes"><i data-lucide="wrench"></i> <span>Outlet Staff Notes</span>
                 </div>
                 <div class="nav-item" data-target="notifications"><i data-lucide="bell"></i> <span>Notifications</span>
                 </div>
@@ -507,7 +422,7 @@
                     <button id="hamburger" style="padding: 0.5rem; margin-left: -0.5rem; flex-shrink: 0;"><i
                             data-lucide="menu"></i></button>
                     <h2 id="section-title"
-                        style="font-size: clamp(0.85rem, 3.5vw, 1.5rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        style="font-size: clamp(0.85rem, 3.5vw, 1.5rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'Space Grotesk', sans-serif;">
                         Overview</h2>
                 </div>
                 <div class="header-right"
@@ -520,277 +435,277 @@
                     </button>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <div class="avatar"
-                            style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; flex-shrink: 0;">
-                            W</div>
+                            style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--primary-brand); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; flex-shrink: 0;">
+                            M</div>
                         <div class="user-info" style="text-align: left;">
-                            <p style="font-weight: 600; font-size: 0.85rem; white-space: nowrap;">Wolfgang M.</p>
-                            <p style="font-size: 0.65rem; opacity: 0.6; white-space: nowrap;">Premium Member</p>
+                            <p style="font-weight: 600; font-size: 0.85rem; white-space: nowrap; font-family: 'Space Grotesk', sans-serif;">Marcus Vance</p>
+                            <p style="font-size: 0.65rem; opacity: 0.6; white-space: nowrap; font-family: 'Inter', sans-serif;">Pro Athlete Renter</p>
                         </div>
                     </div>
                 </div>
             </header>
 
             <div class="content-area">
-                <!-- DASHBOARD (OVERVIEW) -->
+                <!-- 1️⃣ DASHBOARD (OVERVIEW) -->
                 <div id="overview" class="dash-section active">
-                    <h2 style="margin-bottom: 2rem;">Welcome back, Wolfgang! 👋</h2>
-                    <p style="opacity: 0.7; margin-bottom: 2rem;">Here's what's happening with your pack today.</p>
-
-                    <div class="stat-grid">
-                        <div class="dash-card">
-                            <i data-lucide="calendar-check" style="color:var(--primary); margin-bottom: 1rem;"></i>
-                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Next Session</h4>
-                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">April 18, 2026</p>
-                            <span style="color: var(--primary); font-size: 0.8rem;">At 10:00 AM</span>
-                        </div>
-                        <div class="dash-card">
-                            <i data-lucide="trending-up" style="color:var(--primary); margin-bottom: 1rem;"></i>
-                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Command Mastery</h4>
-                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">85% Completed</p>
-                            <div
-                                style="width:100%; height:6px; background:var(--border); border-radius:3px; margin-top:0.5rem;">
-                                <div style="width:85%; height:100%; background:var(--primary); border-radius:3px;">
-                                </div>
+                    <div class="dashboard-hero-header">
+                        <div>
+                            <span class="hero-eyebrow">CUSTOMER DASHBOARD</span>
+                            <h1 class="cyan-gradient-text" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; line-height: 1.1; font-family: 'Space Grotesk', sans-serif;">Command Center</h1>
+                            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <span class="badge-tag accent-tag">Pro Athlete Renter</span>
+                                <span class="badge-tag success-tag"><i data-lucide="verified" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i> Verified Account</span>
+                                <span class="badge-tag secondary-tag">Renting: Cricket & Badminton</span>
                             </div>
                         </div>
-                        <div class="dash-card">
-                            <i data-lucide="check-square" style="color:var(--primary); margin-bottom: 1rem;"></i>
-                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Homework Tasks</h4>
-                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">3 Pending</p>
-                            <span style="color: var(--error); font-size: 0.8rem;">Requires attention</span>
+                    </div>
+
+                    <div class="stat-grid">
+                        <div class="dash-card" style="opacity: 0; transform: translateY(20px);" data-delay="100">
+                            <i data-lucide="package-check" style="color:var(--accent); margin-bottom: 1rem;"></i>
+                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif;">Active Equipment Rentals</h4>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0; font-family: 'Space Grotesk', sans-serif;">2 Items Rented</p>
+                            <span style="color: var(--accent); font-size: 0.8rem; font-family: 'Inter', sans-serif;">Cricket Willow Bat & Badminton Net</span>
+                        </div>
+                        <div class="dash-card" style="opacity: 0; transform: translateY(20px);" data-delay="300">
+                            <i data-lucide="shield-check" style="color:var(--accent); margin-bottom: 1rem;"></i>
+                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif;">Active Security Deposit</h4>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0; font-family: 'Space Grotesk', sans-serif;">$200.00 Held</p>
+                            <div class="deposit-progress-bar">
+                                <div class="deposit-progress-fill" style="width: 0%;"></div>
+                            </div>
+                            <span style="color: var(--accent); font-size: 0.8rem; margin-top: 0.4rem; display: block; font-family: 'Inter', sans-serif;">100% Refundable on Check-in</span>
+                        </div>
+                        <div class="dash-card" style="opacity: 0; transform: translateY(20px);" data-delay="500">
+                            <i data-lucide="clock" style="color:var(--accent); margin-bottom: 1rem;"></i>
+                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif;">Next Equipment Return</h4>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0; font-family: 'Space Grotesk', sans-serif;">April 18, 2026</p>
+                            <span style="color: var(--warning); font-size: 0.8rem; font-family: 'Inter', sans-serif;">Due by 6:00 PM</span>
                         </div>
                     </div>
 
                     <div class="dash-card" style="margin-top: 2rem;">
-                        <h3 style="margin-bottom: 1.5rem;">Recent Activity</h3>
+                        <h3 style="margin-bottom: 1.5rem;">Recent Rental Activity</h3>
                         <div style="display: flex; flex-direction: column; gap: 1rem;">
                             <div class="activity-row"
-                                style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg); border-radius: 12px; gap: 1rem;">
-                                <span style="font-size: clamp(0.8rem, 3vw, 1rem);">In-home training session
-                                    completed</span>
+                                style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg); border-radius: 12px; gap: 1rem; border: 1px solid var(--border);">
+                                <span style="font-size: clamp(0.8rem, 3vw, 1rem); font-family: 'Inter', sans-serif;">Grade 1 English Willow Bat rental slot confirmed for April 18</span>
                                 <span class="activity-time"
-                                    style="opacity: 0.5; font-size: 0.75rem; white-space: nowrap; flex-shrink: 0;">2
-                                    days ago</span>
+                                    style="opacity: 0.5; font-size: 0.75rem; white-space: nowrap; flex-shrink: 0; font-family: 'Inter', sans-serif;">1 day ago</span>
                             </div>
                             <div class="activity-row"
-                                style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg); border-radius: 12px; gap: 1rem;">
-                                <span style="font-size: clamp(0.8rem, 3vw, 1rem);">New training video unlocked:
-                                    "Advanced Recall"</span>
+                                style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg); border-radius: 12px; gap: 1rem; border: 1px solid var(--border);">
+                                <span style="font-size: clamp(0.8rem, 3vw, 1rem); font-family: 'Inter', sans-serif;">$50.00 Deposit Refunded for Cricket Helmet #104</span>
                                 <span class="activity-time"
-                                    style="opacity: 0.5; font-size: 0.75rem; white-space: nowrap; flex-shrink: 0;">4
-                                    days ago</span>
+                                    style="color: var(--accent); font-size: 0.75rem; white-space: nowrap; flex-shrink: 0; font-family: 'Inter', sans-serif;">3 days ago</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- BOOK SESSION -->
+                <!-- 2️⃣ BOOK EQUIPMENT SLOT -->
                 <div id="book" class="dash-section">
-                    <h2 style="margin-bottom: 2rem;">Book a New Session</h2>
-                    <form class="dash-form">
+                    <h2 style="margin-bottom: 2rem;" class="cyan-gradient-text">Book Equipment Rental Slot</h2>
+                    <form class="dash-form" onsubmit="event.preventDefault(); alert('Rental Slot Successfully Reserved! Check Active Rentals tab.');">
                         <div>
-                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Service Type</label>
-                            <select class="dash-input">
-                                <option>Initial In-Home Audit</option>
-                                <option>In-Home Behavioral Session</option>
-                                <option>Puppy Foundations Package</option>
-                                <option>Group Socialization (Outdoor)</option>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600; font-family: 'Space Grotesk', sans-serif;">Select Sport Equipment Category</label>
+                            <select class="dash-input" id="equipment-select" required>
+                                <option value="cricket-bat">Cricket - Pro Willow Bat ($25/day + $50 Deposit)</option>
+                                <option value="cricket-machine">Cricket - Balling Machine ($60/day + $150 Deposit)</option>
+                                <option value="badminton-pro">Badminton - Pro Carbon Racket Pack ($20/day + $40 Deposit)</option>
+                                <option value="badminton-net">Badminton - Portable Court Net System ($30/day + $60 Deposit)</option>
+                                <option value="outdoor-tent">Outdoor - 4-Person Waterproof Tent ($35/day + $70 Deposit)</option>
+                                <option value="outdoor-trekking">Outdoor - Trekking Expedition Kit ($45/day + $90 Deposit)</option>
                             </select>
                         </div>
                         <div class="grid-resp-2" style="gap: 1rem;">
                             <div>
-                                <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Preferred
-                                    Date</label>
-                                <input type="date" class="dash-input">
+                                <label style="display:block; margin-bottom:0.5rem; font-weight:600; font-family: 'Space Grotesk', sans-serif;">Rental Start Date</label>
+                                <input type="date" class="dash-input" required>
                             </div>
                             <div>
-                                <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Preferred
-                                    Time</label>
-                                <input type="time" class="dash-input">
+                                <label style="display:block; margin-bottom:0.5rem; font-weight:600; font-family: 'Space Grotesk', sans-serif;">Return Date</label>
+                                <input type="date" class="dash-input" required>
                             </div>
                         </div>
                         <div>
-                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Notes for
-                                Trainer</label>
-                            <textarea class="dash-input" style="height: 120px;"
-                                placeholder="What behavior would you like to focus on?"></textarea>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600; font-family: 'Space Grotesk', sans-serif;">Pickup / Delivery Preference</label>
+                            <select class="dash-input">
+                                <option>Self-Pickup at Outlet (123 Stadium Road)</option>
+                                <option>Doorstep Express Delivery (+$15 Fee)</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="padding: 1.25rem;">Confirm Booking
-                            Request</button>
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600; font-family: 'Space Grotesk', sans-serif;">Special Match / Equipment Notes</label>
+                            <textarea class="dash-input" style="height: 120px;"
+                                placeholder="Specify custom bat weight preference or racket string tension..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="padding: 1.25rem;">Reserve Equipment Slot & Pay Deposit</button>
                     </form>
                 </div>
 
-                <!-- MY SESSIONS -->
-                <div id="sessions" class="dash-section">
-                    <h2 style="margin-bottom: 2rem;">My Scheduled Sessions</h2>
+                <!-- 3️⃣ ACTIVE RENTALS -->
+                <div id="rentals" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;" class="cyan-gradient-text">Active Equipment Rentals</h2>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div class="dash-card session-card"
-                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border: 1px solid var(--border);">
                             <div>
-                                <h4 style="margin-bottom: 0.25rem;">Advanced Recall Mastery</h4>
+                                <h4 style="margin-bottom: 0.25rem;">Grade 1 English Willow Cricket Bat</h4>
                                 <p class="location-row"
-                                    style="font-size: 0.9rem; opacity: 0.7; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i data-lucide="map-pin" style="width:14px;"></i> At Home - 123 Dog Lane
+                                    style="font-size: 0.9rem; opacity: 0.7; display: flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif;">
+                                    <i data-lucide="tag" style="width:14px; color: var(--accent);"></i> Category: Cricket Gear | Serial: #CR-8820
                                 </p>
+                                <p style="font-size: 0.85rem; color: var(--accent); margin-top: 0.25rem; font-family: 'Inter', sans-serif;">Refundable Deposit Held: $50.00</p>
                             </div>
                             <div style="text-align: right;">
-                                <p style="font-weight: 600; color: var(--primary);">April 18, 10:00 AM</p>
+                                <p style="font-weight: 600; color: var(--accent); font-family: 'Space Grotesk', sans-serif;">Return Date: April 18, 6:00 PM</p>
                                 <span
-                                    style="background: var(--success-light); color: var(--success-dark); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-top: 0.25rem;">CONFIRMED</span>
+                                    style="background: rgba(0, 212, 255, 0.15); color: var(--accent); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-top: 0.25rem; font-family: 'Space Grotesk', sans-serif;">ACTIVE SLOT</span>
                             </div>
                         </div>
                         <div class="dash-card session-card"
-                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border: 1px solid var(--border);">
                             <div>
-                                <h4 style="margin-bottom: 0.25rem;">Leash Reactivity Audit</h4>
+                                <h4 style="margin-bottom: 0.25rem;">Badminton Portable Court Net System</h4>
                                 <p class="location-row"
-                                    style="font-size: 0.9rem; opacity: 0.7; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i data-lucide="map-pin" style="width:14px;"></i> Central Park South
+                                    style="font-size: 0.9rem; opacity: 0.7; display: flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif;">
+                                    <i data-lucide="tag" style="width:14px; color: var(--accent);"></i> Category: Badminton | Serial: #BD-304
                                 </p>
+                                <p style="font-size: 0.85rem; color: var(--accent); margin-top: 0.25rem; font-family: 'Inter', sans-serif;">Refundable Deposit Held: $150.00</p>
                             </div>
                             <div style="text-align: right;">
-                                <p style="font-weight: 600; opacity: 0.5;">May 02, 11:30 AM</p>
+                                <p style="font-weight: 600; opacity: 0.7; font-family: 'Space Grotesk', sans-serif;">Return Date: April 22, 5:00 PM</p>
                                 <span
-                                    style="background: var(--slate-light); color: var(--slate); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-top: 0.25rem;">PENDING</span>
+                                    style="background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-top: 0.25rem; font-family: 'Space Grotesk', sans-serif;">IN TRANSIT</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- DOG PROGRESS -->
-                <div id="progress" class="dash-section">
-                    <h2 style="margin-bottom: 2rem;">Wolf's Progress Tracker</h2>
+                <!-- 4️⃣ MANAGE DEPOSITS -->
+                <div id="deposits" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;" class="cyan-gradient-text">Security Deposit Management</h2>
                     <div class="progress-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-                        <div class="dash-card">
-                            <h3 style="margin-bottom: 1.5rem;">Behavioral Score</h3>
+                        <div class="dash-card" style="border: 1px solid var(--border);">
+                            <h3 style="margin-bottom: 1.5rem;">Active Deposit Breakdown</h3>
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px;">
                                 <div
-                                    style="width: 120px; height: 120px; border-radius: 50%; border: 10px solid var(--primary); display: flex; align-items: center; justify-content: center;">
-                                    <h1 style="font-size: 2.5rem;">8.5</h1>
+                                    style="width: 130px; height: 130px; border-radius: 50%; border: 10px solid var(--accent); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                    <h2 style="font-size: 1.8rem; margin: 0;" class="cyan-gradient-text">$200</h2>
+                                    <span style="font-size: 0.7rem; opacity: 0.7; font-family: 'Space Grotesk', sans-serif;">HELD</span>
                                 </div>
                             </div>
-                            <p style="text-align: center; margin-top: 1rem; opacity: 0.7;">"Significant improvement in
-                                impulse control and reactivity levels."</p>
+                            <p style="text-align: center; margin-top: 1rem; opacity: 0.8; font-size: 0.9rem; font-family: 'Inter', sans-serif;">"All deposits are 100% refunded immediately after gear inspection at check-in."</p>
                         </div>
-                        <div class="dash-card">
-                            <h3 style="margin-bottom: 1.5rem;">Skill Checklist</h3>
-                            <ul style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="dash-card" style="border: 1px solid var(--border);">
+                            <h3 style="margin-bottom: 1.5rem;">Deposit History Log</h3>
+                            <ul style="display: flex; flex-direction: column; gap: 1rem; padding-left: 0; font-family: 'Inter', sans-serif;">
                                 <li style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span>Heel Position</span> <i data-lucide="check-circle"
-                                        style="color: var(--success);"></i>
+                                    <span>Willow Bat (#CR-8820)</span>
+                                    <span style="font-weight: 600; color: var(--warning);">$50.00 (HELD)</span>
                                 </li>
                                 <li style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span>Place Command</span> <i data-lucide="check-circle"
-                                        style="color: var(--success);"></i>
+                                    <span>Badminton Net (#BD-304)</span>
+                                    <span style="font-weight: 600; color: var(--warning);">$150.00 (HELD)</span>
                                 </li>
                                 <li style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span>Duration Stay</span> <i data-lucide="clock"
-                                        style="color: var(--primary);"></i>
+                                    <span>Cricket Helmet (#104)</span>
+                                    <span style="font-weight: 600; color: var(--accent);">$50.00 (REFUNDED)</span>
                                 </li>
                                 <li style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span>Park Recall</span> <i data-lucide="circle" style="opacity: 0.2;"></i>
+                                    <span>Camping Tent 4P (#OT-90)</span>
+                                    <span style="font-weight: 600; color: var(--accent);">$70.00 (REFUNDED)</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- TRAINING VIDEOS -->
-                <div id="videos" class="dash-section">
-                    <h2 style="margin-bottom: 2rem;">Training Video Library</h2>
-                    <div class="video-grid">
-                        <div class="dash-card" style="padding: 0; overflow: hidden;">
-                            <div class="video-thumb"
-                                style="background-image: url('assets/training/thumb-obedience.png');">
-                                <div class="play-btn"><i data-lucide="play" style="width: 28px; height: 28px;"></i></div>
+                <!-- 5️⃣ EQUIPMENT CATALOG -->
+                <div id="catalog" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;" class="cyan-gradient-text">Available Sports Equipment Catalog</h2>
+                    <div class="catalog-grid">
+                        <div class="dash-card" style="padding: 0; overflow: hidden; border: 1px solid var(--border);">
+                            <div class="gear-thumb"
+                                style="background-image: url('assets/images/sports_cricket_gear_1786624422258.png');">
                             </div>
                             <div style="padding: 1.5rem;">
-                                <h4>Mastering the 'Sit'</h4>
-                                <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 0.5rem;">Basics • 12 mins</p>
+                                <h4>Cricket Pro Willow Bat</h4>
+                                <p style="opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem; font-family: 'Inter', sans-serif;">Grade 1 English Willow • $25/day • $50 Deposit</p>
                             </div>
                         </div>
-                        <div class="dash-card" style="padding: 0; overflow: hidden;">
-                            <div class="video-thumb" style="background-image: url('assets/training/thumb-recall.png');">
-                                <div class="play-btn"><i data-lucide="play" style="width: 28px; height: 28px;"></i></div>
+                        <div class="dash-card" style="padding: 0; overflow: hidden; border: 1px solid var(--border);">
+                            <div class="gear-thumb" style="background-image: url('assets/images/sports_badminton_gear_1786624442966.png');">
                             </div>
                             <div style="padding: 1.5rem;">
-                                <h4>Advanced Recall Training</h4>
-                                <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 0.5rem;">Behavioral • 18 mins
-                                </p>
+                                <h4>Badminton Tournament Racket</h4>
+                                <p style="opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem; font-family: 'Inter', sans-serif;">High-tension Carbon • $20/day • $40 Deposit</p>
                             </div>
                         </div>
-                        <div class="dash-card" style="padding: 0; overflow: hidden;">
-                            <div class="video-thumb" style="background-image: url('assets/training/thumb-leash.png');">
-                                <div class="play-btn"><i data-lucide="lock" style="width: 28px; height: 28px; opacity: 0.8;"></i></div>
+                        <div class="dash-card" style="padding: 0; overflow: hidden; border: 1px solid var(--border);">
+                            <div class="gear-thumb" style="background-image: url('assets/images/sports_outdoor_gear_1786624475770.png');">
                             </div>
-                            <div style="padding: 1.5rem; opacity: 0.5;">
-                                <h4>Urban Leash Management</h4>
-                                <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 0.5rem;">Unlocked at Level 5</p>
+                            <div style="padding: 1.5rem;">
+                                <h4>4-Person Camping Tent</h4>
+                                <p style="opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem; font-family: 'Inter', sans-serif;">Waterproof Dome • $35/day • $70 Deposit</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- HOMEWORK -->
-                <div id="homework" class="dash-section">
-                    <h2 style="margin-bottom: 2rem;">Homework Tasks</h2>
+                <!-- 6️⃣ RETURN CHECKLIST -->
+                <div id="checklist" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;" class="cyan-gradient-text">Equipment Return & Deposit Refund Checklist</h2>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div class="dash-card" style="display:flex; align-items: flex-start; gap: 1rem; padding: 1.5rem;">
-                            <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; margin-top: 0.25rem;">
+                        <div class="dash-card" style="display:flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; border: 1px solid var(--border);">
+                            <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; margin-top: 0.25rem;">
                             <div>
-                                <h5 style="margin-bottom: 0.25rem; font-size: 1rem;">Impulse Control Stays</h5>
-                                <p style="font-size: 0.85rem; opacity: 0.7;">Practice 3 minutes of stay while toys are
-                                    moved around him.</p>
+                                <h5 style="margin-bottom: 0.25rem; font-size: 1rem; font-family: 'Space Grotesk', sans-serif;">Wipe and Clean Gear</h5>
+                                <p style="font-size: 0.85rem; opacity: 0.7; font-family: 'Inter', sans-serif;">Ensure cricket bats, badminton handles, and tent fabrics are free of mud or dirt.</p>
                             </div>
                         </div>
-                        <div class="dash-card" style="display:flex; align-items: flex-start; gap: 1rem; padding: 1.5rem;">
-                            <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; margin-top: 0.25rem;">
+                        <div class="dash-card" style="display:flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; border: 1px solid var(--border);">
+                            <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; margin-top: 0.25rem;">
                             <div>
-                                <h5 style="margin-bottom: 0.25rem; font-size: 1rem;">Urban Sound Desensitization</h5>
-                                <p style="font-size: 0.85rem; opacity: 0.7;">10 minutes sitting near the park entrance
-                                    during bike traffic.</p>
+                                <h5 style="margin-bottom: 0.25rem; font-size: 1rem; font-family: 'Space Grotesk', sans-serif;">Verify Included Accessories</h5>
+                                <p style="font-size: 0.85rem; opacity: 0.7; font-family: 'Inter', sans-serif;">Check that all bat covers, tent pegs, and racket carry bags are returned together.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- TRAINER NOTES -->
+                <!-- 7️⃣ OUTLET STAFF NOTES -->
                 <div id="notes" class="dash-section">
-                    <h2 style="margin-bottom: 2rem;">Lead Trainer Notes</h2>
+                    <h2 style="margin-bottom: 2rem;" class="cyan-gradient-text">Outlet Staff Maintenance Notes</h2>
                     <div class="dash-card"
-                        style="background: rgba(var(--primary-rgb), 0.05); border-left: 8px solid var(--primary);">
-                        <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8; opacity: 0.8;">"Wolf is
-                            making exceptional progress with the 'Place' command. He is beginning to settle much faster.
-                            Please ensure you are rewarding the calm settle, not just the action of getting on the bed.
-                            Keep up the high-value salmon treats for the recall practice—it's clearly his favorite
-                            motivator!"</p>
-                        <p style="margin-top: 2rem; font-weight: 600;">- Alex Paws, Head Specialist</p>
-                        <p style="font-size: 0.8rem; opacity: 0.5;">Sent April 12, 2026</p>
+                        style="background: rgba(0, 212, 255, 0.05); border-left: 8px solid var(--accent); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                        <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8; opacity: 0.8; font-family: 'Inter', sans-serif;">"Your requested English Willow Bat (#CR-8820) has undergone professional machine knocking and oiling. Racket #BD-304 was re-strung to 28 lbs BG65 tension as per your tournament request. Have a great match weekend!"</p>
+                        <p style="margin-top: 2rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif;">- Marcus Miller, Chief Equipment Technician</p>
+                        <p style="font-size: 0.8rem; opacity: 0.5; font-family: 'Inter', sans-serif;">Logged April 14, 2026</p>
                     </div>
                 </div>
 
-                <!-- NOTIFICATIONS -->
+                <!-- 8️⃣ NOTIFICATIONS -->
                 <div id="notifications" class="dash-section">
-                    <h2 style="margin-bottom: 2rem;">Your Notifications</h2>
+                    <h2 style="margin-bottom: 2rem;" class="cyan-gradient-text">Rental Notifications</h2>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div
-                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid var(--info); display: flex; gap: 1rem; align-items: flex-start;">
-                            <i data-lucide="info" style="color: var(--info); margin-top: 0.25rem;"></i>
+                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid var(--accent); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; gap: 1rem; align-items: flex-start;">
+                            <i data-lucide="check-circle" style="color: var(--accent); margin-top: 0.25rem;"></i>
                             <div>
-                                <p style="font-weight: 600;">New Training Guide Available</p>
-                                <p style="opacity: 0.7; font-size: 0.9rem;">"How to handle rainy day exercise" has been
-                                    added to the library.</p>
-                                <span style="font-size: 0.7rem; opacity: 0.5;">2 hours ago</span>
+                                <p style="font-weight: 600; font-family: 'Space Grotesk', sans-serif;">Security Deposit Refunded</p>
+                                <p style="opacity: 0.7; font-size: 0.9rem; font-family: 'Inter', sans-serif;">$50.00 deposit for Cricket Helmet #104 was refunded to your card.</p>
+                                <span style="font-size: 0.7rem; opacity: 0.5; font-family: 'Inter', sans-serif;">3 days ago</span>
                             </div>
                         </div>
                         <div
-                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid var(--success); display: flex; gap: 1rem; align-items: flex-start;">
-                            <i data-lucide="check-circle" style="color: var(--success); margin-top: 0.25rem;"></i>
+                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid var(--accent); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; gap: 1rem; align-items: flex-start;">
+                            <i data-lucide="info" style="color: var(--accent); margin-top: 0.25rem;"></i>
                             <div>
-                                <p style="font-weight: 600;">Session Confirmed</p>
-                                <p style="opacity: 0.7; font-size: 0.9rem;">Your session on April 18 at 10 AM is now
-                                    confirmed.</p>
-                                <span style="font-size: 0.7rem; opacity: 0.5;">Yesterday</span>
+                                <p style="font-weight: 600; font-family: 'Space Grotesk', sans-serif;">Rental Slot Reminder</p>
+                                <p style="opacity: 0.7; font-size: 0.9rem; font-family: 'Inter', sans-serif;">Your Cricket Willow Bat rental slot starts on April 18, 2026.</p>
+                                <span style="font-size: 0.7rem; opacity: 0.5; font-family: 'Inter', sans-serif;">1 day ago</span>
                             </div>
                         </div>
                     </div>
@@ -800,11 +715,30 @@
         </main>
     </div>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- 🛠️ SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // 🎨 Lucide Icons
             if (window.lucide) lucide.createIcons();
+            // Stagger reveal dashboard stats cards
+            const statsCards = document.querySelectorAll('.stat-grid .dash-card');
+            statsCards.forEach(card => {
+                const delay = card.getAttribute('data-delay') || '100';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, parseInt(delay));
+            });
+
+            // Animate progress bar fill
+            setTimeout(() => {
+                const progressFill = document.querySelector('.deposit-progress-fill');
+                if (progressFill) {
+                    progressFill.style.width = '100%';
+                }
+            }, 800);
 
             const sidebar = document.getElementById('sidebar');
             const hamburger = document.getElementById('hamburger');

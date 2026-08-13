@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawsome | Member Login</title>
+    <title>Customer Login | SportGo Gear Rental & Booking Service</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -52,55 +54,57 @@
         </button>
     </div>
 
-    <div class="auth-card">
+    <div class="auth-card" style="border: 1px solid var(--border);">
 
         <a href="index.html" class="logo-brand" style="justify-content: center; margin-bottom: 2rem;">
-            <i data-lucide="dog"></i> Pawsome
+            <i data-lucide="trophy"></i> SportGo
         </a>
-        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Welcome Back</h2>
-        <p style="opacity: 0.6; margin-bottom: 2.5rem;">Access your training progress and videos.</p>
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;" class="cyan-gradient-text">Welcome Back</h2>
+        <p style="opacity: 0.6; margin-bottom: 2.5rem; font-family: 'Inter', sans-serif;">Manage your active rentals, book slots, and track deposit status.</p>
 
         <form action="dashboard.html">
             <input type="email" placeholder="Email Address" class="auth-input" required>
             <div style="position: relative; width: 100%;">
                 <input type="password" placeholder="Password" class="auth-input" style="width: 100%;" required>
                 <span class="password-toggle"
-                    style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: var(--slate);"><i
+                    style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: var(--accent);"><i
                         data-lucide="eye"></i></span>
             </div>
 
             <div class="auth-actions">
-                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; white-space: nowrap;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; white-space: nowrap; font-family: 'Inter', sans-serif;">
                     <input type="checkbox"> Remember Me
                 </label>
-                <a href="#" style="font-weight: 700; color: var(--primary); white-space: nowrap;">Forgot Password?</a>
+                <a href="#" style="font-weight: 700; color: var(--accent); white-space: nowrap; font-family: 'Inter', sans-serif;">Forgot Password?</a>
             </div>
 
             <button type="submit" class="btn btn-primary"
-                style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 12px;">Sign In</button>
+                style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 12px;">Sign In to Dashboard</button>
         </form>
 
         <div style="text-align: center; margin: 2rem 0; position: relative;">
             <span
-                style="background: var(--card-bg); padding: 0 1rem; position: relative; z-index: 1; font-size: 0.85rem; opacity: 0.6;">Or
+                style="background: var(--card-bg); padding: 0 1rem; position: relative; z-index: 1; font-size: 0.85rem; opacity: 0.6; font-family: 'Inter', sans-serif;">Or
                 continue with</span>
         </div>
 
         <div class="social-auth">
             <button class="btn btn-secondary"
                 style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i
-                    data-lucide="chrome" style="width: 20px;"></i> Google</button>
+                    data-lucide="chrome" style="width: 20px; color: var(--accent);"></i> Google</button>
             <button class="btn btn-secondary"
                 style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i
-                    data-lucide="apple" style="width: 20px;"></i> Apple</button>
+                    data-lucide="apple" style="width: 20px; color: var(--accent);"></i> Apple</button>
         </div>
 
-        <p style="margin-top: 3rem; font-size: 0.95rem; opacity: 0.7;">
+        <p style="margin-top: 3rem; font-size: 0.95rem; opacity: 0.7; font-family: 'Inter', sans-serif;">
             Don't have an account? <a href="signup.html"
-                style="font-weight: 700; color: var(--primary); white-space: nowrap;">Sign Up</a>
+                style="font-weight: 700; color: var(--accent); white-space: nowrap;">Create Account</a>
         </p>
     </div>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 </body>
 

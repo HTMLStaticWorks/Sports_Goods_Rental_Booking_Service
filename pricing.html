@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | Investment in Behavior</title>
+    <title>Pricing & Deposit Rates | SportGo Gear Rental & Booking Service</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
@@ -14,7 +16,7 @@
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <a href="index.html" class="logo-brand">
-                <i data-lucide="dog"></i> Pawsome
+                <i data-lucide="trophy"></i> SportGo
             </a>
             <nav class="nav-links">
                 <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
@@ -27,7 +29,7 @@
                 <a href="services.html">Services</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
-                <a href="dashboard.html" style="font-weight: 600;">Dashboard</a>
+                <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
                 <!-- Toggles inside menu for mobile ONLY -->
                 <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
                     <button id="theme-toggle-mob" class="btn" title="Change Theme"
@@ -38,7 +40,7 @@
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
-                    style="margin-top: 1rem; color: white; text-align: center;">Login</a>
+                    style="margin-top: 1rem; color: var(--primary-brand); text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
@@ -57,123 +59,112 @@
     </header>
 
     <main>
-        <!-- Section 1: Hero (Pricing) -->
-        <section class="hero-section reveal-zoom"
-            style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 12rem 0; color: white; text-align: center; width: 100%;">
+        <!-- Section 1: Hero (Pricing Redesign - About Format) -->
+        <section class="about-hero">
             <div class="container">
-                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2.5rem;">The Best
-                    Investment You'll Ever Make</h1>
-                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Transparent pathways for
-                    elite behavioral coaching. We bring elite results directly to your living room.</p>
-            </div>
-        </section>
-
-        <!-- Section 2: Pricing Table -->
-        <section>
-            <div class="container">
-                <div class="grid-3 stagger-container">
-                    <div class="card reveal-left" style="text-align: center; padding-top: 3.5rem !important;">
-                        <span style="opacity: 0.5; font-weight: 600; text-transform: uppercase;">Evaluation</span>
-                        <h2 style="margin: 1.5rem 0;">$149</h2>
-                        <ul
-                            style="margin-bottom: 3rem; opacity: 0.8; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem;">
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> In-home
-                                Behavioral Audit</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 90-minute
-                                session</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Detailed
-                                Roadmap</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Digital
-                                Training Companion</li>
-                        </ul>
-                        <button class="btn btn-secondary" style="width: 100%; padding: 1.1rem; margin-top: auto;">Book Audit</button>
+                <div class="about-grid">
+                    <div>
+                        <span class="hero-eyebrow">FLEXIBLE RENTAL PLANS</span>
+                        <h1 class="home1-heading heading-underline cyan-gradient-text" style="opacity: 1; animation: none;">Play More.<br>Pay Smarter.</h1>
+                        <p class="hero-text" style="opacity: 1; animation: none; margin-top: 1rem;">Choose a rental plan that fits your game, schedule and budget. Clear rates with 100% refundable deposits and premium support.</p>
+                        
+                        <div class="hero-ctas" style="margin-top: 2.5rem; display: flex; gap: 1rem;">
+                            <a href="#plans-grid" class="btn btn-primary hero-btn">Explore Plans</a>
+                            <a href="dashboard.html" class="btn btn-secondary hero-btn hero-btn-white">Book Instant Slot</a>
+                        </div>
                     </div>
-                    <div class="card blur-in"
-                        style="text-align: center; border-color: var(--primary); background: var(--secondary); color: white; padding-top: 5rem !important; position: relative; transform: scale(1.05); z-index: 2;">
-                        <span
-                            style="background: var(--primary); color: white; padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%);">Most
-                            Popular</span>
-                        <span style="opacity: 0.7; font-weight: 600; text-transform: uppercase;">Premium Growth</span>
-                        <h2 style="margin: 1.5rem 0; color: white;">$599</h2>
-                        <ul
-                             style="margin-bottom: 4rem; opacity: 0.9; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem; color: white;">
-                             <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 4 Intensive
-                                 In-home visits</li>
-                             <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Full
-                                 Dashboard access</li>
-                             <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i>
-                                 Personalized Video Review</li>
-                             <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                     data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Priority
-                                 Scheduling</li>
-                        </ul>
-                        <button class="btn btn-primary" style="width: 100%; padding: 1.1rem; margin-top: auto;">Start Training</button>
-                    </div>
-                    <div class="card reveal-right" style="text-align: center; padding-top: 3.5rem !important;">
-                        <span style="opacity: 0.5; font-weight: 600; text-transform: uppercase;">Elite Mastery</span>
-                        <h2 style="margin: 1.5rem 0;">$999</h2>
-                        <ul
-                            style="margin-bottom: 3rem; opacity: 0.8; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem;">
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 8 Intensive
-                                In-home visits</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Lifetime
-                                Support Group</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Custom
-                                Equipment Set</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
-                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Advanced
-                                Desensitization</li>
-                        </ul>
-                        <button class="btn btn-secondary" style="width: 100%; padding: 1.1rem; margin-top: auto;">Master Enrollment</button>
+                    <div class="about-image-wrapper" id="pricing-hero-img-wrapper">
+                        <img src="assets/images/hero-premium.png" alt="SportGo Pricing Plans" id="pricing-hero-img">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Feature Detail (IMAGE) -->
+        <!-- Section 2: Pricing Table (About Format integration) -->
+        <section id="plans-grid" style="background: var(--bg); padding: 5rem 0;">
+            <div class="container">
+                <div class="pricing-cards-container" style="margin-top: 0;">
+                    <!-- Starter Card -->
+                    <div class="pricing-card-custom" id="starter-card">
+                        <span style="opacity: 0.6; font-weight: 700; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem;">Starter</span>
+                        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 0;">For casual players</p>
+                        <h2 class="pricing-value">$29 <span style="font-size: 1.1rem; font-weight: 500; opacity: 0.7;">/ day</span></h2>
+                        <p style="font-size: 0.8rem; color: var(--accent); font-weight: 700; font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">+$50 Refundable Deposit</p>
+                        
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> 1 Pro Cricket Bat or Racket</li>
+                            <li><i data-lucide="check"></i> Protective Gear Included</li>
+                            <li><i data-lucide="check"></i> 24-Hour Rental Duration</li>
+                            <li><i data-lucide="check"></i> Store Pickup & Return</li>
+                        </ul>
+                        <a href="dashboard.html" class="btn btn-secondary pricing-btn-custom">Book Starter Plan</a>
+                    </div>
+                    
+                    <!-- Pro Card (Recommended) -->
+                    <div class="pricing-card-custom recommended" id="pro-card">
+                        <span class="pricing-badge">Most Popular</span>
+                        <span style="opacity: 0.8; font-weight: 700; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; color: var(--accent);">Pro</span>
+                        <p style="opacity: 0.9; font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 0;">For regular players</p>
+                        <h2 class="pricing-value" style="color: var(--accent);">$69 <span style="font-size: 1.1rem; font-weight: 500; opacity: 0.8; color: white;">/ weekend</span></h2>
+                        <p style="font-size: 0.8rem; color: var(--accent); font-weight: 700; font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">+$100 Refundable Deposit</p>
+                        
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check" style="color: var(--accent);"></i> Complete Cricket/Badminton Kit</li>
+                            <li><i data-lucide="check" style="color: var(--accent);"></i> Shuttle & Ball Bundles</li>
+                            <li><i data-lucide="check" style="color: var(--accent);"></i> 3-Day Weekend Slot Access</li>
+                            <li><i data-lucide="check" style="color: var(--accent);"></i> Free Doorstep Delivery</li>
+                        </ul>
+                        <a href="dashboard.html" class="btn btn-primary pricing-btn-custom pulse-btn">Book Pro Plan</a>
+                    </div>
+                    
+                    <!-- Elite Card -->
+                    <div class="pricing-card-custom" id="elite-card">
+                        <span style="opacity: 0.6; font-weight: 700; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem;">Elite</span>
+                        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 0;">For teams and serious athletes</p>
+                        <h2 class="pricing-value">$149 <span style="font-size: 1.1rem; font-weight: 500; opacity: 0.7;">/ week</span></h2>
+                        <p style="font-size: 0.8rem; color: var(--accent); font-weight: 700; font-family: 'Space Grotesk', sans-serif; margin-bottom: 1rem;">+$150 Refundable Deposit</p>
+                        
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Full Outdoor Camping Tent & Gear</li>
+                            <li><i data-lucide="check"></i> Balling Machine or Trekking Outfits</li>
+                            <li><i data-lucide="check"></i> 7-Day Flexible Date Slot</li>
+                            <li><i data-lucide="check"></i> Priority Maintenance Support</li>
+                        </ul>
+                        <a href="dashboard.html" class="btn btn-secondary pricing-btn-custom">Book Elite Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Section 4: Process -->
-        <section>
+        <section style="background: var(--card-bg);">
             <div class="container" style="text-align: center;">
                 <div class="reveal-zoom">
-                    <h2 style="margin-bottom: 4rem;">How to Begin Your Journey</h2>
+                    <h2 style="margin-bottom: 4rem;">Deposit Refund Process</h2>
                     <div class="grid-3" style="gap: 3rem;">
-                        <div class="card" style="text-align: center; padding: 3rem 2rem;">
+                        <div class="card" style="text-align: center; padding: 3rem 2rem; border: 1px solid var(--border);">
                             <div
-                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
-                                <i data-lucide="clipboard-list" style="width: 40px; height: 40px;"></i>
+                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--accent); border: 1px solid var(--border);">
+                                <i data-lucide="credit-card" style="width: 40px; height: 40px;"></i>
                             </div>
-                            <h3 style="margin-bottom: 1rem;">Pick Plan</h3>
-                            <p style="opacity: 0.7; font-size: 0.95rem;">Select the roadmap that aligns with your dog's
-                                specific needs.</p>
+                            <h3 style="margin-bottom: 1rem;">1. Hold Deposit</h3>
+                            <p style="opacity: 0.7; font-size: 0.95rem; font-family: 'Inter', sans-serif;">Security deposit is authorized securely during gear slot reservation.</p>
                         </div>
-                        <div class="card" style="text-align: center; padding: 3rem 2rem;">
+                        <div class="card" style="text-align: center; padding: 3rem 2rem; border: 1px solid var(--border);">
                             <div
-                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
-                                <i data-lucide="shield-check" style="width: 40px; height: 40px;"></i>
+                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--accent); border: 1px solid var(--border);">
+                                <i data-lucide="check-circle" style="width: 40px; height: 40px;"></i>
                             </div>
-                            <h3 style="margin-bottom: 1rem;">Secure Payment</h3>
-                            <p style="opacity: 0.7; font-size: 0.95rem;">Encrypted processing via our high-fidelity
-                                member portal.</p>
+                            <h3 style="margin-bottom: 1rem;">2. Quick Inspection</h3>
+                            <p style="opacity: 0.7; font-size: 0.95rem; font-family: 'Inter', sans-serif;">Our outlet staff checks equipment integrity upon return.</p>
                         </div>
-                        <div class="card" style="text-align: center; padding: 3rem 2rem;">
+                        <div class="card" style="text-align: center; padding: 3rem 2rem; border: 1px solid var(--border);">
                             <div
-                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
-                                <i data-lucide="home" style="width: 40px; height: 40px;"></i>
+                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--accent); border: 1px solid var(--border);">
+                                <i data-lucide="refresh-cw" style="width: 40px; height: 40px;"></i>
                             </div>
-                            <h3 style="margin-bottom: 1rem;">First Visit</h3>
-                            <p style="opacity: 0.7; font-size: 0.95rem;">Our training experts arrive at your door to
-                                begin the transformation.</p>
+                            <h3 style="margin-bottom: 1rem;">3. Instant Refund</h3>
+                            <p style="opacity: 0.7; font-size: 0.95rem; font-family: 'Inter', sans-serif;">100% refundable deposit status is updated on your dashboard within hours.</p>
                         </div>
                     </div>
                 </div>
@@ -181,13 +172,12 @@
         </section>
 
         <!-- Section 5: FAQs (Accordion) -->
-        <section style="background: var(--bg);">
+        <section>
             <div class="container">
                 <div class="reveal-up" style="text-align: center; margin-bottom: 5rem;">
                     <span
-                        style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Common
-                        Questions</span>
-                    <h2 style="margin-top: 1rem;">Everything You Need to Know</h2>
+                        style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-family: 'Space Grotesk', sans-serif;">Rental FAQ</span>
+                    <h2 style="margin-top: 1rem;">Frequently Asked Rental & Deposit Questions</h2>
                 </div>
 
                 <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
@@ -195,14 +185,12 @@
                         style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
                         <button class="faq-trigger"
                             style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.1rem; text-align: left;">
-                            <span>What is included in the in-home behavioral audit?</span>
+                            <span>How does the security deposit refund work?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
-                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                Our 90-minute audit includes a comprehensive behavioral assessment, environmental setup
-                                review, and a personalized roadmap detailing exactly how we'll bridge the gap between
-                                your dog's current state and your training goals.
+                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8; font-family: 'Inter', sans-serif;">
+                                When you book gear, a security deposit is securely held. Once the gear is returned to our outlet in good working condition, the deposit status transitions to "REFUNDED" and the funds are released to your original payment method.
                             </div>
                         </div>
                     </div>
@@ -211,14 +199,12 @@
                         style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
                         <button class="faq-trigger"
                             style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.1rem; text-align: left;">
-                            <span>How long are the training sessions?</span>
+                            <span>Can I extend my equipment rental date slot?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
-                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                Standard sessions are 60 minutes long. The initial evaluation is longer (90 minutes) to
-                                allow for a deep-dive behavioral analysis. We focus on efficiency ensure we the most out
-                                of every minute.
+                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8; font-family: 'Inter', sans-serif;">
+                                Yes! You can easily extend your rental date directly through your Customer Dashboard before your current slot expires.
                             </div>
                         </div>
                     </div>
@@ -227,14 +213,12 @@
                         style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
                         <button class="faq-trigger"
                             style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.1rem; text-align: left;">
-                            <span>Do you provide digital training support?</span>
+                            <span>Is the sports equipment sanitized before pickup?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
-                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                Yes! Every client receives access to our Pawsome Portal, which includes video libraries,
-                                homework tracking, and direct messaging with your trainer for support between in-home
-                                visits.
+                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8; font-family: 'Inter', sans-serif;">
+                                Absolutely. Every cricket bat, helmet, badminton racket grip, and camping tent is sanitized, inspected, and match-tested prior to release.
                             </div>
                         </div>
                     </div>
@@ -243,14 +227,12 @@
                         style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
                         <button class="faq-trigger"
                             style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.1rem; text-align: left;">
-                            <span>What happens if I need to reschedule?</span>
+                            <span>What happens if equipment gets damaged during a match?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
-                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                We understand life happens. You can reschedule any session with at least 48 hours'
-                                notice through your member portal. Within 48 hours, a small rescheduling fee may apply
-                                to respect our trainers' time.
+                            <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8; font-family: 'Inter', sans-serif;">
+                                Normal play wear and tear is fully covered under your rental fee. Minor string breaks or grip replacement will not impact your deposit.
                             </div>
                         </div>
                     </div>
@@ -260,17 +242,15 @@
 
         <!-- Section 6: Premium CTA (Centered Stack) -->
         <section
-            style="background: linear-gradient(135deg, var(--bg-dark), var(--primary)); padding: 8rem 0; text-align: center; color: white;">
+            style="background: var(--primary-brand); padding: 8rem 0; text-align: center; color: white;">
             <div class="container">
                 <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
                     <h2
                         style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 2rem; color: white;">
-                        Ready to invest in your dog's future?</h2>
-                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3.5rem; line-height: 1.6;">Don't wait for
-                        behavioral issues to escalate. Start your journey toward a calmer, happier household today.</p>
-                    <a href="contact.html" class="btn btn-primary"
-                        style="padding: 1.5rem 4rem; font-size: 1.2rem; background: white; color: var(--secondary); border-radius: 50px; border: none; width: fit-content; margin: 0 auto;">Get
-                        Started Now</a>
+                        Ready to Book Your Equipment Slot?</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3.5rem; line-height: 1.6; font-family: 'Inter', sans-serif;">Select your gear, pick your rental dates, and manage your deposit online.</p>
+                    <a href="dashboard.html" class="btn btn-primary hero-btn"
+                        style="width: fit-content; margin: 0 auto;">Access Customer Dashboard</a>
                 </div>
             </div>
         </section>
@@ -282,10 +262,9 @@
             <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
-                        <i data-lucide="dog"></i> Pawsome
+                        <i data-lucide="trophy"></i> SportGo
                     </a>
-                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
-                        in-home canine training through empathy and modern behavioral science.</p>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Your trusted sports equipment rental outlet for Cricket, Badminton, and Outdoor gear with date slot booking and refundable deposit tracking.</p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="instagram"></i></a>
                         <a href="#"><i data-lucide="facebook"></i></a>
@@ -295,33 +274,33 @@
                 </div>
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="index.html#testimonials">Success Stories</a></li>
-                        <li><a href="programs.html">Elite Programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="index.html#testimonials">Renter Reviews</a></li>
+                        <li><a href="programs.html">Gear Categories</a></li>
+                        <li><a href="about.html">About Outlet</a></li>
+                        <li><a href="services.html">Rental Services</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms</a></li>
+                    <h4 style="margin-bottom: 1.5rem;">Legal & Deposits</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><a href="pricing.html">Rental Rates</a></li>
+                        <li><a href="#">Deposit Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
-                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
-                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
-                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    <h4 style="margin-bottom: 1.5rem;">Contact Outlet</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7; padding-left: 0;">
+                        <li><i data-lucide="map-pin"></i> 123 Stadium Road, Arena District</li>
+                        <li><i data-lucide="phone"></i> (555) 890-GEAR</li>
+                        <li><i data-lucide="mail"></i> info@sportsrental.com</li>
                     </ul>
                 </div>
             </div>
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
-                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+                &copy; 2026 SportGo. All rights reserved. Professional Sports Equipment Outlet.
             </div>
         </div>
     </footer>
@@ -331,7 +310,24 @@
         <i data-lucide="chevron-up"></i>
     </button>
 
+    <!-- Bootstrap 5 CDN JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // Stagger reveal of pricing cards
+            const cards = document.querySelectorAll('.pricing-card-custom');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('reveal-enter');
+                }, index * 150);
+            });
+        });
+    </script>
 </body>
 
 </html>
