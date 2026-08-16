@@ -150,6 +150,13 @@
             }
         }
 
+        .user-info {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         /* RTL SUPPORT */
         [dir="rtl"] .sidebar-nav {
             left: auto;
@@ -437,9 +444,9 @@
                         <div class="avatar"
                             style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--primary-brand); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; flex-shrink: 0;">
                             M</div>
-                        <div class="user-info" style="text-align: left;">
-                            <p style="font-weight: 600; font-size: 0.85rem; white-space: nowrap; font-family: 'Space Grotesk', sans-serif;">Marcus Vance</p>
-                            <p style="font-size: 0.65rem; opacity: 0.6; white-space: nowrap; font-family: 'Inter', sans-serif;">Pro Athlete Renter</p>
+                        <div class="user-info">
+                            <p style="font-weight: 600; font-size: 0.85rem; white-space: nowrap; font-family: 'Space Grotesk', sans-serif; margin: 0; line-height: 1.2;">Marcus Vance</p>
+                            <p style="font-size: 0.65rem; opacity: 0.6; white-space: nowrap; font-family: 'Inter', sans-serif; margin: 0; line-height: 1.2;">Pro Athlete Renter</p>
                         </div>
                     </div>
                 </div>
@@ -453,7 +460,6 @@
                             <span class="hero-eyebrow">CUSTOMER DASHBOARD</span>
                             <h1 class="cyan-gradient-text" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; line-height: 1.1; font-family: 'Space Grotesk', sans-serif;">Command Center</h1>
                             <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                                <span class="badge-tag accent-tag">Pro Athlete Renter</span>
                                 <span class="badge-tag success-tag"><i data-lucide="verified" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i> Verified Account</span>
                                 <span class="badge-tag secondary-tag">Renting: Cricket & Badminton</span>
                             </div>

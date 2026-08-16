@@ -455,16 +455,36 @@
                 });
             });
 
-            // Horizontal motion effect while scrolling
-            const track = document.getElementById('category-track');
-            window.addEventListener('scroll', () => {
-                if (track) {
-                    const scrollPos = window.scrollY;
-                    // Cap it to prevent excessive translation
-                    const maxTranslate = Math.min(scrollPos * 0.2, 150);
-                    track.style.transform = `translateX(${-maxTranslate}px)`;
-                }
-            });
+            // Smooth automatic horizontal scrolling
+            const scrollContainer = document.querySelector('.cards-scroll-container');
+            let scrollSpeed = 0.8;
+            let direction = 1;
+            let isHovered = false;
+
+            if (scrollContainer) {
+                scrollContainer.addEventListener('mouseenter', () => { isHovered = true; });
+                scrollContainer.addEventListener('mouseleave', () => { isHovered = false; });
+                scrollContainer.addEventListener('touchstart', () => { isHovered = true; });
+                scrollContainer.addEventListener('touchend', () => { isHovered = false; });
+
+                const autoScroll = () => {
+                    if (!isHovered) {
+                        scrollContainer.scrollLeft += scrollSpeed * direction;
+                        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+                        if (scrollContainer.scrollLeft >= maxScroll - 1) {
+                            direction = -1;
+                        } else if (scrollContainer.scrollLeft <= 0) {
+                            direction = 1;
+                        }
+                    }
+                    requestAnimationFrame(autoScroll);
+                };
+                
+                // Start auto scroll after card entrance animation completes
+                setTimeout(() => {
+                    requestAnimationFrame(autoScroll);
+                }, 1000);
+            }
         });
     </script>
 </body>
