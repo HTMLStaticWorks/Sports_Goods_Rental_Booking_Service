@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = () => {
         const currentTheme = localStorage.getItem('theme') || 'light';
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
         document.body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateIcons();
@@ -19,10 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btns.forEach(id => {
             const btn = document.getElementById(id);
             if (btn) {
-                const icon = btn.querySelector('i');
-                if (icon) {
-                    icon.setAttribute('data-lucide', currentTheme === 'light' ? 'moon' : 'sun');
-                }
+                const iconName = currentTheme === 'light' ? 'moon' : 'sun';
+                btn.innerHTML = `<i data-lucide="${iconName}"></i>`;
             }
         });
         if (window.lucide) {
@@ -31,7 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Initialize Theme
-    document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+    const initialTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', initialTheme);
+    document.body.setAttribute('data-theme', initialTheme);
     updateIcons();
 
     // Initialize RTL

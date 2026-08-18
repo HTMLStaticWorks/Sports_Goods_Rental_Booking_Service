@@ -743,11 +743,22 @@ svg.lucide-star {
 }
 
 .btn-nav-utility i,
-.btn-nav-utility svg {
-    width: 18px !important;
-    height: 18px !important;
+.btn-nav-utility svg,
+#theme-toggle i, #theme-toggle svg,
+#theme-toggle-mob i, #theme-toggle-mob svg,
+#rtl-toggle i, #rtl-toggle svg,
+#rtl-toggle-mob i, #rtl-toggle-mob svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
     color: inherit !important;
-    stroke: currentColor;
+    stroke: currentColor !important;
+    fill: none !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 #theme-toggle:hover,
@@ -758,6 +769,14 @@ svg.lucide-star {
     color: var(--primary-brand) !important;
     border-color: var(--accent) !important;
     transform: scale(1.08);
+}
+
+#theme-toggle:hover i, #theme-toggle:hover svg,
+#rtl-toggle:hover i, #rtl-toggle:hover svg,
+#theme-toggle-mob:hover i, #theme-toggle-mob:hover svg,
+#rtl-toggle-mob:hover i, #rtl-toggle-mob:hover svg {
+    color: var(--primary-brand) !important;
+    stroke: var(--primary-brand) !important;
 }
 
 /* --- SECTIONS --- */
@@ -972,9 +991,24 @@ svg.lucide:hover {
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, var(--bg-dark), var(--primary-brand));
+    background: linear-gradient(135deg, #EAEFF5 0%, #F5F7FA 100%);
     position: relative;
     overflow: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+[data-theme="dark"] .auth-wrapper,
+[data-theme="dark"].auth-wrapper,
+html[data-theme="dark"] body.auth-wrapper {
+    background: linear-gradient(135deg, #04070D 0%, #0B132B 50%, #1C2541 100%) !important;
+    background-color: #070B14 !important;
+}
+
+[data-theme="light"] .auth-wrapper,
+[data-theme="light"].auth-wrapper,
+html[data-theme="light"] body.auth-wrapper {
+    background: linear-gradient(135deg, #EAEFF5 0%, #F5F7FA 100%) !important;
+    background-color: #F5F7FA !important;
 }
 
 .auth-floating-toggles {
